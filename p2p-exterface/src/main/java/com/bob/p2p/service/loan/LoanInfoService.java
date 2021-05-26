@@ -15,4 +15,5 @@ public interface LoanInfoService {
      * @return
      */
     Double queryHistoryAverageRate();
+
 }

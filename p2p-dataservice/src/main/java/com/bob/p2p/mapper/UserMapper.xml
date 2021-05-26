@@ -165,4 +165,8 @@
       headerImage = #{headerimage,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!-- 查询平台注册总人数-->
+  <select id="selectUserTotal" resultType="java.lang.Integer">
+    select count(id) from u_user;
+  </select>
 </mapper>

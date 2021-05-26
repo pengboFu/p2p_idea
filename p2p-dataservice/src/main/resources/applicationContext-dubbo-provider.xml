@@ -12,6 +12,8 @@
 	<dubbo:registry  protocol="zookeeper" address="146.56.226.157:2181"/>
 		<!-- 产品业务	-->
 	<dubbo:service interface="com.bob.p2p.service.loan.LoanInfoService" ref="loanInfoServiceImpl" version="1.0.0" timeout="15000"/>
+		<!-- 用户业务	-->
+	<dubbo:service interface="com.bob.p2p.service.user.UserService" ref="userServiceImpl" version="1.0.0" timeout="15000"/>
 <!--	-->
 <!--	<dubbo:service interface="com.bob.p2p.service.loan.LoanInfoService" ref="loanInfoServiceImpl" version="1.0.0" timeout="15000"/>-->
 <!--	-->
