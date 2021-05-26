@@ -2,6 +2,9 @@ package com.bob.p2p.mapper;
 
 import com.bob.p2p.model.loan.LoanInfo;
 
+import java.util.List;
+import java.util.Map;
+
 
 public interface LoanInfoMapper {
     /**
@@ -65,4 +68,13 @@ public interface LoanInfoMapper {
      * @return
      */
     Double selectHistoryAverageRate();
+    /**
+      *
+      * @Description: 查询产品按照类型
+      * @Author: bob
+      * @Date: 2021/5/26 13:31
+      * @version v1.0
+      *
+      */
+    List<LoanInfo> selectLoanInfoByProductType(Map<String, Object> paramMap);
 }

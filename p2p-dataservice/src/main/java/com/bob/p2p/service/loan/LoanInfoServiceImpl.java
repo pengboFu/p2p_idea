@@ -3,11 +3,14 @@ package com.bob.p2p.service.loan;
 
 import com.bob.p2p.common.constant.Constants;
 import com.bob.p2p.mapper.LoanInfoMapper;
+import com.bob.p2p.model.loan.LoanInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -43,5 +46,11 @@ public class LoanInfoServiceImpl implements LoanInfoService{
         }
 
         return historyAverageRate;
+    }
+
+    @Override
+    public List<LoanInfo> queryLoanInfoListByProducetType(Map<String, Object> paramMap) {
+        List<LoanInfo> loanInfos = loanInfoMapper.selectLoanInfoByProductType(paramMap);
+        return loanInfos;
     }
 }

@@ -28,4 +28,33 @@ public class Constants  {
       *
       */
     public static final String ALL_BID_MONEY = "allBidMoney";
+    /**
+      *
+      * @Description: 产品类型 新手宝
+      * @Author: bob
+      * @Date: 2021/5/26 13:28
+      * @version v1.0
+      *
+      */
+    public static final Integer PRODUCET_TYPE_X = 0;
+    /**
+     *
+     * @Description: 产品类型 优选宝
+     * @Author: bob
+     * @Date: 2021/5/26 13:28
+     * @version v1.0
+     *
+     */
+    public static final Integer PRODUCET_TYPE_U = 1;
+
+    /**
+     *
+     * @Description: 产品类型 散标
+     * @Author: bob
+     * @Date: 2021/5/26 13:28
+     * @version v1.0
+     *
+     */
+    public static final Integer PRODUCET_TYPE_S = 2;
+
 }

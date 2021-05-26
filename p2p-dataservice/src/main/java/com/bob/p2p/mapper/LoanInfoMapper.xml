@@ -277,4 +277,17 @@
   <select id="selectHistoryAverageRate" resultType="java.lang.Double">
     select cast(avg(rate) as Decimal (10,2)) from b_loan_info;
   </select>
+    <!-- 按照类型查询产品 -->
+  <select id="selectLoanInfoByProductType" resultMap="BaseResultMap">
+    select
+        <include refid="Base_Column_List"/>
+    from b_loan_info
+     <where>
+       <if test="producetType != null">
+               product_type = #{producetType}
+      </if>
+     </where>
+    order by release_time desc
+    limit #{currenPage},#{pageSize};
+  </select>
 </mapper>
