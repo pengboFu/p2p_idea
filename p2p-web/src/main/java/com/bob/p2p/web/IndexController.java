@@ -1,7 +1,9 @@
 package com.bob.p2p.web;
 
 import com.bob.p2p.common.constant.Constants;
+import com.bob.p2p.service.loan.BidInfoService;
 import com.bob.p2p.service.loan.LoanInfoService;
+import com.bob.p2p.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,12 @@ public class IndexController {
     @Autowired
     private LoanInfoService loanInfoService;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private BidInfoService bidInfoService;
+
     /**
      * 首页查询
      * @param request
@@ -32,10 +40,13 @@ public class IndexController {
         model.addAttribute(Constants.HISTOR_AVERAGE_RETE,historyAverageRate);
 
         //获取平台注册总数
-
+        Integer userTotal = userService.queryUserTotal();
+        model.addAttribute(Constants.USER_TOTAL,userTotal);
 
         //获A取平台累计投资金额
-        
+        Double allBidMoney = bidInfoService.queryAllBidMoney();
+        model.addAttribute(Constants.ALL_BID_MONEY,allBidMoney);
+
         //获取新手宝产品
 
         //获取优选产品

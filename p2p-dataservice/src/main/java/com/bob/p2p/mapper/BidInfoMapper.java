@@ -50,4 +50,13 @@ public interface BidInfoMapper {
      * @mbggenerated Sat May 22 18:30:38 CST 2021
      */
     int updateByPrimaryKey(BidInfo record);
+    /**
+      *
+      * @Description: 查询平台总投资金额
+      * @Author: bob
+      * @Date: 2021/5/26 11:02
+      * @version v1.0
+      *
+      */
+    Double selectALlBidMoney();
 }

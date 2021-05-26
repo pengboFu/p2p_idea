@@ -14,7 +14,9 @@
 	<dubbo:service interface="com.bob.p2p.service.loan.LoanInfoService" ref="loanInfoServiceImpl" version="1.0.0" timeout="15000"/>
 		<!-- 用户业务	-->
 	<dubbo:service interface="com.bob.p2p.service.user.UserService" ref="userServiceImpl" version="1.0.0" timeout="15000"/>
-<!--	-->
+		<!-- 投资业务	-->
+	<dubbo:service interface="com.bob.p2p.service.loan.BidInfoService" ref="bidInfoSerivceImpl" version="1.0.0" timeout="15000"/>
+
 <!--	<dubbo:service interface="com.bob.p2p.service.loan.LoanInfoService" ref="loanInfoServiceImpl" version="1.0.0" timeout="15000"/>-->
 <!--	-->
 <!--	<dubbo:service interface="com.bob.p2p.service.loan.BidInfoService" ref="bidInfoServiceImpl" version="1.0.0" timeout="25000"/>-->

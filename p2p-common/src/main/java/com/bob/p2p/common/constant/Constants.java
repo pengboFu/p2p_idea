@@ -1,5 +1,7 @@
 package com.bob.p2p.common.constant;
 
+import java.io.Serializable;
+
 /**
  * @BelongsProject: p2p_idea
  * @BelongsPackage: com.bob.p2p.common.constant
@@ -7,7 +9,7 @@ package com.bob.p2p.common.constant;
  * @CreateTime: 2021-05-23 10:51
  * @Description: 常量类
  */
-public class Constants {
+public class Constants  {
 
     /**
      * 历史平均年化收益率
@@ -17,5 +19,13 @@ public class Constants {
      * 平台注册总人数
      */
     public static final String USER_TOTAL = "userTotal";
-
+    /**
+      *
+      * @Description: 平台所有投资金额
+      * @Author: bob
+      * @Date: 2021/5/26 10:54
+      * @version v1.0
+      *
+      */
+    public static final String ALL_BID_MONEY = "allBidMoney";
 }

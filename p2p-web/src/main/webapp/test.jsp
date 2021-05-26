@@ -11,5 +11,7 @@
 
 </head>
 <body>
-历史年化收益率:${historyAverageRete}
+历史年化收益率:${historyAverageRete}<br>
+平台注册总人数：${userTotal}<br>
+平台总投资金额：${allBidMoney}
 </html>

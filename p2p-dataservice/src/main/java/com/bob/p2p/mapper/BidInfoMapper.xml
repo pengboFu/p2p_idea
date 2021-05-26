@@ -143,4 +143,8 @@
       bidStatus = #{bidstatus,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectALlBidMoney" resultType="java.lang.Double">
+    select sum(bidMoney) from b_bid_info
+  </select>
 </mapper>

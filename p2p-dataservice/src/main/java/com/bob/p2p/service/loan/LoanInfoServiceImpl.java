@@ -5,6 +5,7 @@ import com.bob.p2p.common.constant.Constants;
 import com.bob.p2p.mapper.LoanInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
@@ -27,12 +28,17 @@ public class LoanInfoServiceImpl implements LoanInfoService{
 
     @Override
     public Double queryHistoryAverageRate() {
+
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+
         //判断redis 是否存在历史年化收益率
         Double historyAverageRate = (Double) redisTemplate.opsForValue().get(Constants.HISTOR_AVERAGE_RETE);
 
         //存在则去除 不存在 则去 获取历史年化收益率
         if (historyAverageRate == null) {
+
             historyAverageRate =loanInfoMapper.selectHistoryAverageRate();
+
             redisTemplate.opsForValue().set(Constants.HISTOR_AVERAGE_RETE,historyAverageRate,15, TimeUnit.MINUTES);
         }
 
