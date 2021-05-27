@@ -3,12 +3,14 @@ package com.bob.p2p.service.loan;
 
 import com.bob.p2p.common.constant.Constants;
 import com.bob.p2p.dao.loan.BidInfoExEntityMapper;
+import com.bob.p2p.model.loan.BidInfoExEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Service("bidInfoSerivceImpl")
@@ -36,5 +38,11 @@ public class BidInfoSerivceImpl implements BidInfoService{
         }
 
         return allBidMoney;
+    }
+
+    @Override
+    public List<BidInfoExEntity> queryBidInfoListByLoanId(Integer id) {
+
+        return bidInfoExEntityMapper.selectBidInfoListByLoanId( id);
     }
 }

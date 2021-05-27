@@ -1,6 +1,6 @@
 package com.bob.p2p.dao.loan;
 
-import com.bob.p2p.model.loan.LoanInfoEntity;
+import com.bob.p2p.model.LoanInfoEntity;
 
 import java.util.List;
 import java.util.Map;

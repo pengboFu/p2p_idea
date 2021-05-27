@@ -1,7 +1,9 @@
 package com.bob.p2p.web;
 
 import com.bob.p2p.model.VO.PagenationVO;
-import com.bob.p2p.model.loan.LoanInfoEntity;
+import com.bob.p2p.model.loan.BidInfoExEntity;
+import com.bob.p2p.model.LoanInfoEntity;
+import com.bob.p2p.service.loan.BidInfoService;
 import com.bob.p2p.service.loan.LoanInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -27,6 +30,9 @@ public class LoanInfoController {
 
     @Autowired
     private LoanInfoService loanInfoService;
+
+    @Autowired
+    private BidInfoService bidInfoService;
 
 
 
@@ -71,6 +77,8 @@ public class LoanInfoController {
             totalPage = totalPage + 1;
         }
 
+        //TODO
+        //投资排行榜
 
         model.addAttribute("totalRows",pagenationVO.getToltal());
         model.addAttribute("totalPage",totalPage);
@@ -78,6 +86,25 @@ public class LoanInfoController {
         model.addAttribute("currentPage",currentPage);
 
         return "loan";
+    }
+
+    @RequestMapping("/loan/loanInfo")
+    private String loanInfo(HttpServletRequest request,Model model,
+                            @RequestParam(value = "id",required = true) Integer id){
+
+        //根据产品id 获取产品详情
+        LoanInfoEntity loanInfoEntity = loanInfoService.queryLoanInfoById(id);
+
+        //获取该产品的用户投资记录
+        List<BidInfoExEntity> bidInfoExEntityList = bidInfoService.queryBidInfoListByLoanId(id);
+
+        //TODO
+        //获取当前用户的账户可查询余额
+
+
+        model.addAttribute("loanInfo",loanInfoEntity);
+        model.addAttribute("bidInfoList",bidInfoExEntityList);
+        return  "loanInfo";
     }
 
 }

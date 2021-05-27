@@ -2,9 +2,10 @@ package com.bob.p2p.service.loan;
 
 
 import com.bob.p2p.common.constant.Constants;
+import com.bob.p2p.dao.LoanInfoEntityMapper;
 import com.bob.p2p.dao.loan.LoanInfoExEntityMapper;
 import com.bob.p2p.model.VO.PagenationVO;
-import com.bob.p2p.model.loan.LoanInfoEntity;
+import com.bob.p2p.model.LoanInfoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -26,6 +27,9 @@ public class LoanInfoServiceImpl implements LoanInfoService{
 
     @Autowired
     private LoanInfoExEntityMapper loanInfoExEntityMapper;
+
+    @Autowired
+    private LoanInfoEntityMapper loanInfoEntityMapper;
 
     @Autowired
     private RedisTemplate<Object,Object> redisTemplate;
@@ -64,4 +68,11 @@ public class LoanInfoServiceImpl implements LoanInfoService{
         objectPagenationVO.setDateList(loanInfos);
         return objectPagenationVO;
     }
+
+    @Override
+    public LoanInfoEntity queryLoanInfoById(Integer id) {
+        return loanInfoEntityMapper.selectByPrimaryKey(id);
+    }
+
+
 }

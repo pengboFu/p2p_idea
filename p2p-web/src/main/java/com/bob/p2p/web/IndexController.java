@@ -1,7 +1,7 @@
 package com.bob.p2p.web;
 
 import com.bob.p2p.common.constant.Constants;
-import com.bob.p2p.model.loan.LoanInfoEntity;
+import com.bob.p2p.model.LoanInfoEntity;
 import com.bob.p2p.service.loan.BidInfoService;
 import com.bob.p2p.service.loan.LoanInfoService;
 import com.bob.p2p.service.user.UserService;

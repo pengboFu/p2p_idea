@@ -84,19 +84,23 @@
 		<dt>
 			<span class="record-num">序号</span><span class="invest-user">投资人</span><span class="invest-money">投资金额(元)</span><span class="invest-time">投资时间</span>
 		</dt>
-		<c:if test="${empty bidInfoList}">
-			<dd style="text-align:center;">
-			该产品暂时还没有人投资，赶快去投资吧~
-			</dd>
-		</c:if>
-		<c:forEach items="${bidInfoList}" var="bidInfo" varStatus="index">
-		<dd>
-			<span class="record-num">${index.count}</span>
-			<span class="invest-user">${fn:substring(bidInfo.user.phone, 0, 3)}******${fn:substring(bidInfo.user.phone, 9, 11)}</span> 
-			<span class="invest-money">${bidInfo.bidMoney}</span>
-			<span class="invest-time"><fmt:formatDate value="${bidInfo.bidTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-		</dd>
-		</c:forEach>
+            <c:choose>
+                <c:when test="${empty bidInfoList}">
+                    <dd style="text-align:center;">
+                        该产品暂时还没有人投资，赶快去投资吧~
+                    </dd>
+                </c:when>
+                <c:otherwise>
+                    <c:forEach items="${bidInfoList}" var="bidInfo" varStatus="index">
+                        <dd>
+                            <span class="record-num">${index.count}</span>
+                            <span class="invest-user">${fn:substring(bidInfo.userEntity.phone, 0, 3)}******${fn:substring(bidInfo.userEntity.phone, 9, 11)}</span>
+                            <span class="invest-money">${bidInfo.bidmoney}</span>
+                            <span class="invest-time"><fmt:formatDate value="${bidInfo.bidtime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
+                        </dd>
+                    </c:forEach>
+                </c:otherwise>
+            </c:choose>
 		</dl>
 		</div>
       </div>

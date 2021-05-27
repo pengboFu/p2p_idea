@@ -7,6 +7,7 @@
 <!--    <properties resource="generator.properties"></properties>-->
     <classPathEntry location="D:/mysql-connector-java-5.1.43.jar"/>
     <context id="MybatisGenerator" targetRuntime="mybatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
           <commentGenerator>
             <!-- 是否去除自动生成的注释 -->
             <property name="suppressAllComments" value="false"/>
@@ -58,32 +59,61 @@
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
-        />
+        >
+<!--            <property name="useActualColumnNames" value="true"/>-->
+            <generatedKey column="uu_id" sqlStatement="MySql"  identity="true" />
+            <columnRenamingRule searchString="^uu_" replaceString="" />
+        </table>
+
         <table tableName="u_finance_account" domainObjectName="FinanceAccountEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
-        />
+        >
+<!--            <property name="useActualColumnNames" value="true"/>-->
+            <generatedKey column="ufa_id" sqlStatement="MySql"  identity="true" />
+            <columnRenamingRule searchString="^ufa_" replaceString="" />
+        </table>
+
         <table tableName="b_bid_info" domainObjectName="BidInfoEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
-        />
+        >
+<!--            <property name="useActualColumnNames" value="true"/>-->
+            <generatedKey column="bbi_id" sqlStatement="MySql"  identity="true" />
+            <columnRenamingRule searchString="^bbi_" replaceString="" />
+        </table>
+
         <table tableName="b_loan_info" domainObjectName="LoanInfoEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
-        />
+        >
+<!--            <property name="useActualColumnNames" value="true"/>-->
+            <generatedKey column="bli_id" sqlStatement="MySql"  identity="true" />
+            <columnRenamingRule searchString="^bli_" replaceString="" />
+        </table>
+
         <table tableName="b_recharge_record" domainObjectName="RechargeRecordEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
-        />
+        >
+<!--            <property name="useActualColumnNames" value="true"/>-->
+            <generatedKey column="brr_id" sqlStatement="MySql"  identity="true" />
+            <columnRenamingRule searchString="^brr_" replaceString="" />
+        </table>
+
         <table tableName="b_income_record" domainObjectName="IncomeRecordEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
-        />
+       >
+<!--            <property name="useActualColumnNames" value="true"/>-->
+            <generatedKey column="bir_id" sqlStatement="MySql"  identity="true" />
+            <columnRenamingRule searchString="^bir_" replaceString="" />
+        </table>
 <!--        <table tableName="b_deal_record" domainObjectName="DealRecordEntity"-->
 <!--               enableCountByExample="false" enableUpdateByExample="false"-->
 <!--               enableDeleteByExample="false" enableSelectByExample="false"-->
