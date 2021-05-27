@@ -2,7 +2,7 @@ package com.bob.p2p.service.loan;
 
 
 import com.bob.p2p.common.constant.Constants;
-import com.bob.p2p.mapper.BidInfoMapper;
+import com.bob.p2p.dao.loan.BidInfoExEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class BidInfoSerivceImpl implements BidInfoService{
 
     @Autowired
-    private BidInfoMapper bidInfoMapper;
+    private BidInfoExEntityMapper bidInfoExEntityMapper;
 
     @Autowired
     private RedisTemplate<Object,Object> redisTemplate;
@@ -30,7 +30,7 @@ public class BidInfoSerivceImpl implements BidInfoService{
         Double allBidMoney = (Double) boundValueOps.get();
 
         if (allBidMoney == null) {
-            allBidMoney = bidInfoMapper.selectALlBidMoney();
+            allBidMoney = bidInfoExEntityMapper.selectALlBidMoney();
 
             boundValueOps.set(allBidMoney,15, TimeUnit.MINUTES);
         }

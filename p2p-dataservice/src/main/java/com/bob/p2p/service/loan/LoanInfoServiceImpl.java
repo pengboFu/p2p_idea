@@ -2,8 +2,9 @@ package com.bob.p2p.service.loan;
 
 
 import com.bob.p2p.common.constant.Constants;
-import com.bob.p2p.mapper.LoanInfoMapper;
-import com.bob.p2p.model.loan.LoanInfo;
+import com.bob.p2p.dao.loan.LoanInfoExEntityMapper;
+import com.bob.p2p.model.VO.PagenationVO;
+import com.bob.p2p.model.loan.LoanInfoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -24,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class LoanInfoServiceImpl implements LoanInfoService{
 
     @Autowired
-    private LoanInfoMapper loanInfoMapper;
+    private LoanInfoExEntityMapper loanInfoExEntityMapper;
 
     @Autowired
     private RedisTemplate<Object,Object> redisTemplate;
@@ -40,7 +41,7 @@ public class LoanInfoServiceImpl implements LoanInfoService{
         //存在则去除 不存在 则去 获取历史年化收益率
         if (historyAverageRate == null) {
 
-            historyAverageRate =loanInfoMapper.selectHistoryAverageRate();
+            historyAverageRate = loanInfoExEntityMapper.selectHistoryAverageRate();
 
             redisTemplate.opsForValue().set(Constants.HISTOR_AVERAGE_RETE,historyAverageRate,15, TimeUnit.MINUTES);
         }
@@ -49,8 +50,18 @@ public class LoanInfoServiceImpl implements LoanInfoService{
     }
 
     @Override
-    public List<LoanInfo> queryLoanInfoListByProducetType(Map<String, Object> paramMap) {
-        List<LoanInfo> loanInfos = loanInfoMapper.selectLoanInfoByProductType(paramMap);
+    public List<LoanInfoEntity> queryLoanInfoListByProducetType(Map<String, Object> paramMap) {
+        List<LoanInfoEntity> loanInfos = loanInfoExEntityMapper.selectLoanInfoByProductType(paramMap);
         return loanInfos;
+    }
+
+    @Override
+    public PagenationVO<LoanInfoEntity> queryLoanInfoVoList(Map<String, Object> paramMap) {
+        PagenationVO<LoanInfoEntity> objectPagenationVO = new PagenationVO<>();
+        Long toltal = loanInfoExEntityMapper.selectLoanInfoToltal(paramMap);
+        objectPagenationVO.setToltal(toltal);
+        List<LoanInfoEntity> loanInfos = loanInfoExEntityMapper.selectLoanInfoByProductType(paramMap);
+        objectPagenationVO.setDateList(loanInfos);
+        return objectPagenationVO;
     }
 }

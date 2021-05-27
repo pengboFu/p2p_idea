@@ -1,7 +1,7 @@
 package com.bob.p2p.web;
 
 import com.bob.p2p.common.constant.Constants;
-import com.bob.p2p.model.loan.LoanInfo;
+import com.bob.p2p.model.loan.LoanInfoEntity;
 import com.bob.p2p.service.loan.BidInfoService;
 import com.bob.p2p.service.loan.LoanInfoService;
 import com.bob.p2p.service.user.UserService;
@@ -56,17 +56,17 @@ public class IndexController {
         paramMap.put("currentPage",0);
         paramMap.put("pageSize",1);
         paramMap.put("productType",Constants.PRODUCET_TYPE_X);
-        List<LoanInfo> xLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
+        List<LoanInfoEntity> xLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
 
         //获取优选产品
         paramMap.put("productType",Constants.PRODUCET_TYPE_U);
         paramMap.put("pageSize",4);
-        List<LoanInfo> uLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
+        List<LoanInfoEntity> uLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
 
         //获取散标产品
         paramMap.put("productType",Constants.PRODUCET_TYPE_S);
         paramMap.put("pageSize",8);
-        List<LoanInfo> sLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
+        List<LoanInfoEntity> sLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
 
         model.addAttribute("xLoanInfoList",xLoanInfoList);
         model.addAttribute("uLoanInfoList",uLoanInfoList);

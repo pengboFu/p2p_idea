@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bob.p2p.dao.loan.BidInfoExEntityMapper" >
+  <resultMap id="bidInfoExEntity" type="com.bob.p2p.model.loan.BidInfoEntity" extends="com.bob.p2p.dao.BidInfoEntityMapper.BaseResultMap">
+
+  </resultMap>
+  <!-- 查询平台总投资额 -->
+  <select id="selectALlBidMoney" resultType="java.lang.Double">
+    select sum(bidMoney) from b_bid_info
+  </select>
+</mapper>

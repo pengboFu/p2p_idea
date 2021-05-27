@@ -1,7 +1,7 @@
 package com.bob.p2p.web;
 
 import com.bob.p2p.model.VO.PagenationVO;
-import com.bob.p2p.model.loan.LoanInfo;
+import com.bob.p2p.model.loan.LoanInfoEntity;
 import com.bob.p2p.service.loan.LoanInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,7 +61,7 @@ public class LoanInfoController {
         paramMap.put("pageSize",pageSize);
 
         //返回的list  要包含  总条数  和 产品对象
-        PagenationVO<LoanInfo> pagenationVO =  loanInfoService.queryLoanInfoVoList(paramMap);
+        PagenationVO<LoanInfoEntity> pagenationVO =  loanInfoService.queryLoanInfoVoList(paramMap);
 
         int totalPage = pagenationVO.getToltal().intValue() / pageSize;
 

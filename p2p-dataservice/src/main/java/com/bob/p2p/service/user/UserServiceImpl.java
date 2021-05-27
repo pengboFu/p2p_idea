@@ -1,7 +1,7 @@
 package com.bob.p2p.service.user;
 
 import com.bob.p2p.common.constant.Constants;
-import com.bob.p2p.mapper.UserMapper;
+import com.bob.p2p.dao.user.UserExEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    private UserMapper userMapper;
+    private UserExEntityMapper userExEntityMapper;
 
     @Autowired
     private RedisTemplate<Object,Object> redisTemplate;
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService{
 
         if (userTotal == null) {
 
-            userTotal = userMapper.selectUserTotal();
+            userTotal = userExEntityMapper.selectUserTotal();
 
             redisTemplate.opsForValue().set(Constants.USER_TOTAL,userTotal,15, TimeUnit.MINUTES);
         }

@@ -32,14 +32,30 @@
  	</bean>
 		
 	<!-- MyBatis sqlSessionFactory 配置 mybatis -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="configLocation" value="classpath:mybatis-configuration.xml" />
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-	
+<!--	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--		<property name="configLocation" value="classpath:mybatis-configuration.xml" />-->
+<!--		<property name="dataSource" ref="dataSource" />-->
+<!--	</bean>-->
+
+
+
 	<!-- scan for mappers and let them be autowired -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.bob.p2p.mapper" />
+<!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--		<property name="basePackage" value="com.bob.p2p.dao" />-->
+<!--		<property name="sqlSessionFactory" ref="sqlSessionFactory" />-->
+<!--	</bean>-->
+
+	<!--配置SqlSessionFactory工厂-->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation"  value="classpath:mybatis-configuration.xml"/>
+		<!-- 扫描sql配置文件:mapper需要的xml文件 -->
+		<property name="mapperLocations" value="classpath*:**/mappers/*Mapper.xml" />
+
+	</bean>
+	<!--配置mapper接口所在包-->
+	<bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.bob.p2p.dao"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	
