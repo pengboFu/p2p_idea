@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bob.p2p.dao.user.UserExEntityMapper" >
-  <resultMap id="userEntityMapperResultMap" type="com.bob.p2p.model.UserEntity" extends="com.bob.p2p.dao.UserEntityMapper.BaseResultMap">
+  <resultMap id="userExEntityMap" type="com.bob.p2p.model.user.UserExEntity" extends="com.bob.p2p.dao.UserEntityMapper.BaseResultMap">
 
 
   </resultMap>
   <!-- 查询平台注册总人数-->
   <select id="selectUserTotal" resultType="java.lang.Integer">
     select count(uu_id) from u_user;
+  </select>
+
+  <select id="selectUserByPhone" resultMap="userExEntityMap">
+    select
+        <include refid="com.bob.p2p.dao.UserEntityMapper.Base_Column_List"/>
+    from
+        u_user
+    where
+      uu_phone = #{phone}
   </select>
 </mapper>

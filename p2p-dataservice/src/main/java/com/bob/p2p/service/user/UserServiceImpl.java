@@ -2,6 +2,7 @@ package com.bob.p2p.service.user;
 
 import com.bob.p2p.common.constant.Constants;
 import com.bob.p2p.dao.user.UserExEntityMapper;
+import com.bob.p2p.model.user.UserExEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -36,6 +37,11 @@ public class UserServiceImpl implements UserService{
         }
 
         return userTotal;
+    }
+
+    @Override
+    public UserExEntity queryIsUserPhone(String phone) {
+        return  userExEntityMapper.selectUserByPhone(phone);
     }
 
 

@@ -36,7 +36,7 @@
               
               <div class="login-box clearfix" style="z-index:100;">
                 <label>手机号</label>
-                <input type="text" id="phone" name="phone" class="input_text" maxlength="11" placeholder="请输入11位手机号码" autocomplete="off" onblur="userRegistered();"/>
+                <input type="text" id="phone" name="phone" class="input_text" maxlength="11" placeholder="请输入11位手机号码" autocomplete="off" onblur="checkPhone();"/>
                 <span id="phoneOk" class="ok" style="display:none;"></span>
                 <div id="phoneErr" class="form-hint" style="display:none;"></div>
               </div>
@@ -58,7 +58,7 @@
               <div class="login-box clearfix" style="z-index:60;">
                 <label>图形验证码</label>
                 <div class="yzm-box">
-                  <input id="captcha" name="captcha" type="text" class="yzm" maxlength="10" placeholder="点击右侧图片可刷新" onblur="checkCaptcha();"/>
+                  <input id="captcha" name="captcha" type="text" class="yzm" maxlength="10" placeholder="点击右侧图片可刷新" onblur="checkCaptcha()"/>
                   <a style='cursor:pointer;'><img src="${pageContext.request.contextPath}/jcaptcha/captcha?d="+new Date().getTime() onclick="this.src='${pageContext.request.contextPath}/jcaptcha/captcha?d='+new Date().getTime()"/></a>
                 </div>
                 <span id="captchaOk" class="ok" style="display:none;"></span>

@@ -56,5 +56,31 @@ public class Constants  {
      *
      */
     public static final Integer PRODUCET_TYPE_S = 2;
-
+    /**
+      *
+      * @Description: 图片验证码
+      * @Author: bob
+      * @Date: 2021/5/27 19:51
+      * @version v1.0
+      *
+      */
+    public static final String CAPTCHA = "captcha";
+    /**
+      *
+      * @Description: 返回信息
+      * @Author: bob
+      * @Date: 2021/5/27 21:43
+      * @version v1.0
+      *
+      */
+    public static final String ERROR_MASSAGE = "errorMessage";
+    /**
+      *
+      * @Description: 返回成功信息
+      * @Author: bob
+      * @Date: 2021/5/27 21:44
+      * @version v1.0
+      *
+      */
+    public static final String OK = "ok";
 }
