@@ -53,18 +53,18 @@ public class IndexController {
 
         //获取新手宝产品 0新手宝 1优选 2 散标产品
         Map<String,Object> paramMap = new HashMap<String,Object>();
-        paramMap.put("currenPage",0);
+        paramMap.put("currentPage",0);
         paramMap.put("pageSize",1);
-        paramMap.put("producetType",Constants.PRODUCET_TYPE_X);
+        paramMap.put("productType",Constants.PRODUCET_TYPE_X);
         List<LoanInfo> xLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
 
         //获取优选产品
-        paramMap.put("producetType",Constants.PRODUCET_TYPE_U);
+        paramMap.put("productType",Constants.PRODUCET_TYPE_U);
         paramMap.put("pageSize",4);
         List<LoanInfo> uLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
 
         //获取散标产品
-        paramMap.put("producetType",Constants.PRODUCET_TYPE_S);
+        paramMap.put("productType",Constants.PRODUCET_TYPE_S);
         paramMap.put("pageSize",8);
         List<LoanInfo> sLoanInfoList = loanInfoService.queryLoanInfoListByProducetType(paramMap);
 
