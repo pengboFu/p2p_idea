@@ -37,38 +37,31 @@ function idCardCheck() {
 	} else if (idCard.length < 15 || idCard.length > 18 || idCard.length == 17) {
 		showError('idCard','身份证号码应为15或18位');
 		return false;
-	} else {
+	}
 		
-		$.ajax({
-			url:"loan/checkIdCard",
-			type:"POST",
-			dataType:"json",
-			async:false,
-			data:"idCard="+idCard,
-			success:function(jsonMap) {
-				if(jsonMap.errorMessage == "ok") {
-					showSuccess("idCard");
-					rtn = true;
-				} else {
-					showError("idCard",jsonMap.errorMessage);
-					rtn = false;
-				}
-			},
-			error:function() {
-				showError("idCard","网络错误");
-				rtn = false;
-			}
-		});
+	// $.ajax({
+	// 	url:"loan/checkIdCard",
+	// 	type:"POST",
+	// 	dataType:"json",
+	// 	async:false,
+	// 	data:"idCard="+idCard,
+	// 	success:function(jsonMap) {
+	// 		if(jsonMap.errorMessage == "ok") {
+	// 			showSuccess("idCard");
+	// 			rtn = true;
+	// 		} else {
+	// 			showError("idCard",jsonMap.errorMessage);
+	// 			rtn = false;
+	// 		}
+	// 	},
+	// 	error:function() {
+	// 		showError("idCard","网络错误");
+	// 		rtn = false;
+	// 	}
+	// });
 		
-	}
-	
-	if (replayIdCard != null && replayIdCard != null && idCard == replayIdCard) {
-		showSuccess('replayIdCard');
-	}
-	
-	if(!rtn){
-		return false;
-	}
+
+	showSuccess('idCard');
 	return true;
 }
 
@@ -107,11 +100,11 @@ function checkCaptcha() {
 	} else {
 		$.ajax({
 			type:"POST",
-			url:"loan/checkCaptcha",
+			url:"loan/verifyCaptcha",
 			async: false,
 			data:"captcha="+captcha,
 			success: function(retMap) {
-			    if (retMap.errorCode) {
+			    if (retMap.errorMessage == "ok") {
 			    	showSuccess('captcha');
 			    	rtn = true;
 			    } else {
@@ -131,28 +124,6 @@ function checkCaptcha() {
 	return true;
 } 
 
-//错误提示
-function showError(id,msg) {
-	$("#"+id+"Ok").hide();
-	$("#"+id+"Err").html("<i></i><p>"+msg+"</p>");
-	$("#"+id+"Err").show();
-	$("#"+id).addClass("input-red");
-}
-
-//错误隐藏
-function hideError(id) {
-	$("#"+id+"Err").hide();
-	$("#"+id+"Err").html("");
-	$("#"+id).removeClass("input-red");
-}
-
-//成功
-function showSuccess(id) {
-	$("#"+id+"Err").hide();
-	$("#"+id+"Err").html("");
-	$("#"+id+"Ok").show();
-	$("#"+id).removeClass("input-red");
-}
 
 //实名认证提交
 function realName () {
@@ -196,6 +167,30 @@ $(function() {
 		}
 	});
 });
+
+//错误提示
+function showError(id,msg) {
+	$("#"+id+"Ok").hide();
+	$("#"+id+"Err").html("<i></i><p>"+msg+"</p>");
+	$("#"+id+"Err").show();
+	$("#"+id).addClass("input-red");
+}
+
+//错误隐藏
+function hideError(id) {
+	$("#"+id+"Err").hide();
+	$("#"+id+"Err").html("");
+	$("#"+id).removeClass("input-red");
+}
+
+//成功
+function showSuccess(id) {
+	$("#"+id+"Err").hide();
+	$("#"+id+"Err").html("");
+	$("#"+id+"Ok").show();
+	$("#"+id).removeClass("input-red");
+}
+
 //打开注册协议弹层
 function alertBox(maskid,bosid){
 	$("#"+maskid).show();

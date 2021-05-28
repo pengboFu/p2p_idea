@@ -40,6 +40,13 @@
             <version>1.3.2</version>
         </dependency>
 
+        <!-- httpclient操作包start -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <!-- httpclient操作包end -->
+
     </dependencies>
 
 </project>

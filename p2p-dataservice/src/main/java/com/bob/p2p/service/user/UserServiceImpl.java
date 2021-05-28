@@ -14,7 +14,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
-import java.sql.Time;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -78,5 +77,10 @@ public class UserServiceImpl implements UserService{
         financeAccountEntity.setAvailableMoney(888.0);
         financeAccountEntityMapper.insertSelective(financeAccountEntity);
         return resultObject;
+    }
+
+    @Override
+    public int modifyUserById(UserEntity userParam) {
+        return userEntityMapper.updateByPrimaryKeySelective(userParam);
     }
 }

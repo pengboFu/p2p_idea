@@ -1,5 +1,6 @@
 package com.bob.p2p.service.user;
 
+import com.bob.p2p.model.UserEntity;
 import com.bob.p2p.model.VO.ResultObject;
 import com.bob.p2p.model.user.UserExEntity;
 import org.springframework.stereotype.Service;
@@ -32,4 +33,13 @@ public interface UserService {
       *
       */
     ResultObject register(String phone, String loginpassword);
+    /**
+      *
+      * @Description: 更新用户信息
+      * @Author: bob
+      * @Date: 2021/5/28 13:55
+      * @version v1.0
+      *
+      */
+    int modifyUserById(UserEntity userParam);
 }
