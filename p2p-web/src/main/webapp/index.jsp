@@ -34,19 +34,23 @@
 		
     <div class="registerBody">
         <div class="register-bg"></div>
-        <!-- 未登录状态 -->
-        <div class="register">
-            <h3>动力金融网历史年化收益率</h3>
-            <h4><span id="avg">${historyAverageRete}</span>%</h4>
-            <div class="bn_register"><a href="register.jsp" class="btn-1">免费注册</a></div>
-            <div class="login">有账号? <a href="login.jsp">立即登录</a></div>
-        </div>
-        <!-- 登录状态  
-        <div class="register welcome">
-            <div class="welcome-txt">欢迎 <span>“<b>张三</b>”</span><br/>来动力金融网投资！</div>
-            <div class="bn_register"><a href="loan/myCenter" class="btn-1">进入我的小金库</a></div>
-        </div>
-        -->
+		<c:choose>
+			<c:when test="${empty userSession}">
+				<!-- 未登录状态 -->
+				<div class="register">
+					<h3>动力金融网历史年化收益率</h3>
+					<h4><span id="avg">${historyAverageRete}</span>%</h4>
+					<div class="bn_register"><a href="register.jsp" class="btn-1">免费注册</a></div>
+					<div class="login">有账号? <a href="login.jsp">立即登录</a></div>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div class="register welcome">
+					<div class="welcome-txt">欢迎 <span>“<b>${userSession.phone}</b>”</span><br/>来动力金融网投资！</div>
+					<div class="bn_register"><a href="loan/myCenter" class="btn-1">进入我的小金库</a></div>
+				</div>
+			</c:otherwise>
+		</c:choose>
     </div>
 </div>
 <!--轮播图end-->

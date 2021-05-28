@@ -1,5 +1,6 @@
 package com.bob.p2p.service.user;
 
+import com.bob.p2p.model.VO.ResultObject;
 import com.bob.p2p.model.user.UserExEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,4 +23,13 @@ public interface UserService {
      * @return
      */
     UserExEntity queryIsUserPhone(String phone);
+    /**
+      *
+      * @Description: 注册账户
+      * @Author: bob
+      * @Date: 2021/5/28 9:39
+      * @version v1.0
+      *
+      */
+    ResultObject register(String phone, String loginpassword);
 }

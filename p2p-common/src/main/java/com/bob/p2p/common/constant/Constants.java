@@ -83,4 +83,31 @@ public class Constants  {
       *
       */
     public static final String OK = "ok";
+    /**
+      *
+      * @Description: 注册返回信息
+      * @Author: bob
+      * @Date: 2021/5/28 9:43
+      * @version v1.0
+      *
+      */
+    public static final String SUCCESS = "success";
+    /**
+      *
+      * @Description: 注册返回信息
+      * @Author: bob
+      * @Date: 2021/5/28 9:43
+      * @version v1.0
+      *
+      */
+    public static final String FALL = "fall";
+    /**
+      *
+      * @Description: 用户信息
+      * @Author: bob
+      * @Date: 2021/5/28 9:56
+      * @version v1.0
+      *
+      */
+    public static final String USER_SESSION = "userSession";
 }

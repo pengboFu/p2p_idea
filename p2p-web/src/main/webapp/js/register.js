@@ -14,6 +14,7 @@ function checkPhone(){
 		$.ajax({
 			url:"loan/checkPhone",
 			type:"post",
+			async: false,
 			data:"phone=" + phone,
 			success:function (jsonObject) {
 				if(jsonObject.errorMessage == "ok"){
@@ -117,6 +118,50 @@ function checkCaptcha() {
 	}
 	return true;
 }
+
+
+//注册验证
+function register(){
+	var phone = $.trim($("#phone").val());
+	//获取密码
+	var loginpassword = $.trim($("#loginPassword").val());
+	//获取确认密码
+	var replayLoginPassword = $.trim($("#replayLoginPassword").val());
+	//获取图形验证码
+	var captcha = $.trim($("#captcha").val());
+	if(checkPhone() && checkCaptcha() && pwdequ() &&　psCheck()){
+
+		//对密码和确认密码进行加密
+		$("#loginPassword").val($.md5(loginpassword));
+		$("#replayLoginPassword").val($.md5(replayLoginPassword));
+
+		//发送请求注册用户信息
+		$.ajax({
+			url:"loan/register",
+			type:"POST",
+			async:true,
+			data:{
+				"phone":phone,
+				"loginPassword":$.trim($("#loginPassword").val()),
+				"replayLoginPassword":$.trim($("#replayLoginPassword").val()),
+				"captcha":captcha
+			},
+			success:function(jsonObject) {
+				if(jsonObject.errorMessage == "ok") {
+					//注册成功
+					window.location.href = "realName.jsp";
+				} else {
+					//注册失败
+					showError("captcha",jsonObject.errorMessage);
+				}
+			},
+			error:function() {
+				showError("captcha","系统繁忙，请稍后重试...");
+			}
+		});
+	}
+}
+
 
 //错误提示
 function showError(id,msg) {
