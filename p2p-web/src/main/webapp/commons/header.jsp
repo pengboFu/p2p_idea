@@ -15,13 +15,13 @@ $(function(){
 <div class="headBody" id="headBody">
     <div class="header">
     <div class="mainBox clearfix">
-        <div class="head_l"><span>客服电话：400-8080-105</span><em></em><a href="http://weibo.com/bjpowernode" target="_blank" class="weibo"></a></div>
+        <div class="head_l"><span>客服电话：400-8080-105</span><em></em><a href="http://weibo.com" target="_blank" class="weibo"></a></div>
         <div class="head_r"><a href="javascript:void(0);" id="helpcenter.html">帮助中心</a><em></em><a href="javascript:void(0);" id="/webPage/invest/phone_jinxin.html" class="phone_jinxin" style="margin-right:15px;"><i></i>手机客户端</a>
             <div class="phone-ewm" style="display:none;">
                 <a href="javascript:void(0)" class="phone_jinxin"><i></i>手机客户端</a>
                 <div class="phone-ewm-dropdown">
                     <span><img src="images/phone_jinxin_ewm.png" alt=""></span>
-                    <p>下载动力宝APP</p>
+                    <p>下载球球宝APP</p>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@ $(function(){
             <c:choose>
                 <c:when test="${empty userSession}">
                     <!-- 未登录start -->
-                    <div class="no-login"><a href="register.jsp" class="btn-reg">注册</a><a href="login.jsp" class="btn-login">登录</a></div>
+                    <div class="no-login"><a href="register.jsp" class="btn-reg">注册</a><a href="${pageContext.request.contextPath}/login.jsp" class="btn-login">登录</a></div>
                     <!-- 未登录end -->
                 </c:when>
                 <c:otherwise>
@@ -57,13 +57,13 @@ $(function(){
                         </div>
                         <div class="userinfo-drop-down" style="height: 0px;">
                             <div class="down-bk">
-                                <div class="user-balance">余额：<span id="frame_top">--</span>元</div>
+                                <div class="user-balance">余额：<span id="frame_top"></span>元</div>
                                 <ul class="quick-entry clearfix">
                                     <li class="icon-recharge"><a href="toRecharge.jsp"><i></i><span>充值</span></a></li>
                                     <li class="icon-invest" style="margin-left:85px;"><a href="loan/loan"><i></i><span>投资</span></a></li>
                                 </ul>
                                 <div class="enter">进入“<a href="/webPage/account/acc.html?mytime=1501046257129">我的小金库</a>”</div>
-                                <div class="exit"><a href="loan/logout">退出</a></div>
+                                <div class="exit"><a href="${pageContext.request.contextPath}/loan/logout">退出</a></div>
                             </div>
                         </div>
                     </div>
@@ -79,14 +79,14 @@ $(function(){
 <div id="ewm" class="ewm_layer" style="display:none;">
     <a href="javascript:void(0)" class="close"></a>
     <div class="ewm_weixin">
-        <h3>动力网服务号</h3>
-        <h4>更多服务请关注动力网服务号</h4>
-        <div class="ewm"><img src="images/ewm_fwh.jpg" alt="动力网服务号"></div>
+        <h3>球球网服务号</h3>
+        <h4>更多服务请关注球球网服务号</h4>
+        <div class="ewm"><img src="images/ewm_fwh.jpg" alt="球球网服务号"></div>
     </div>
     <div class="ewm_weixin">
-        <h3>动力网订阅号</h3>
-        <h4>获取动力网最新资讯</h4>
-        <div class="ewm"><img src="images/ewm_dyh.jpg" alt="动力网订阅号"></div>
+        <h3>球球网订阅号</h3>
+        <h4>获取球球网最新资讯</h4>
+        <div class="ewm"><img src="images/ewm_dyh.jpg" alt="球球网订阅号"></div>
     </div>
 </div>
 <!-- 二维码弹出层end -->

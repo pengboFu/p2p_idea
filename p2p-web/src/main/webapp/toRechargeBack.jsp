@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="keywords" content="动力金融网，投资理财，P2P理财，互联网金融，投资理财，理财，网络贷款，个人贷款，小额贷款，网络投融资平台, 网络理财, 固定收益, 100%本息保障" />
-<meta name="description" content="动力金融网-专业的互联网金融平台！预期年化收益可高达13%，第三方资金托管，屡获大奖。"/>
-<title>动力金融网-专业的互联网金融公司</title>
+<meta name="keywords" content="球球金融网，投资理财，P2P理财，互联网金融，投资理财，理财，网络贷款，个人贷款，小额贷款，网络投融资平台, 网络理财, 固定收益, 100%本息保障" />
+<meta name="description" content="球球金融网-专业的互联网金融平台！预期年化收益可高达13%，第三方资金托管，屡获大奖。"/>
+<title>球球金融网-专业的互联网金融公司</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/center.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/fund-guanli.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base.css"/>

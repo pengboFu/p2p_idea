@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/fund-guanli.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/share.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base.css"/>
-<title>动力金融网 - 专业的互联网金融信息服务平台</title>
+<title>球球金融网 - 专业的互联网金融信息服务平台</title>
 <script type="text/javascript" language="javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/trafficStatistics.js"></script>
 <script type="text/javascript">

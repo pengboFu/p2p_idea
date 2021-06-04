@@ -18,4 +18,12 @@
     where
       uu_phone = #{phone}
   </select>
+  <select id="selectUserByPhoneAndPsdForLogin" resultMap="userExEntityMap">
+    select
+        <include refid="com.bob.p2p.dao.UserEntityMapper.Base_Column_List"/>
+    from
+        u_user
+    where
+        uu_phone = #{phone} and uu_loginPassword = #{loginPassword}
+  </select>
 </mapper>

@@ -67,7 +67,7 @@ public class Constants  {
     public static final String CAPTCHA = "captcha";
     /**
       *
-      * @Description: 返回信息
+      * @Description: 页面返回信息
       * @Author: bob
       * @Date: 2021/5/27 21:43
       * @version v1.0
@@ -100,7 +100,7 @@ public class Constants  {
       * @version v1.0
       *
       */
-    public static final String FALL = "fall";
+    public static final String FALL = "fail";
     /**
       *
       * @Description: 用户信息

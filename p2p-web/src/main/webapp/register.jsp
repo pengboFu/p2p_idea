@@ -8,7 +8,7 @@
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jQuery.md5.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/register.js"></script>
-<title>注册动力金融网-动力金融网,专业的互联网金融信息服务平台</title>
+<title>注册球球金融网-球球金融网,专业的互联网金融信息服务平台</title>
 </head>
 
 <body>
@@ -67,7 +67,7 @@
               
               <div class="remember" style="z-index:60;">
                 <span class="on">
-                <input id="agree" name="agree" type="checkbox"/>我已阅读并同意<a href="javascript:alertBox('mask','agreement');"><font style="color: red;">《动力金融网&trade;注册服务协议》</font></a>
+                <input id="agree" name="agree" type="checkbox"/>我已阅读并同意<a href="javascript:alertBox('mask','agreement');"><font style="color: red;">《球球金融网&trade;注册服务协议》</font></a>
                 </span>
               </div>
               

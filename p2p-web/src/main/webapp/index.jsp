@@ -6,8 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    	<meta name="keywords" content="互联网金融平台，互联网金融产品，互联网金融公司"/>
-   	<meta name="description" content="动力金融网是动力教育集团旗下一站式互联网金融平台.接入支付清算协会风险系统，用互联网技术和金融创新使投资与借贷更透明、更高效.优选互联网金融产品随心选。"/>
-    <title>动力金融网官网-专业的互联网金融信息服务平台</title>
+   	<meta name="description" content="球球金融网是球球教育集团旗下一站式互联网金融平台.接入支付清算协会风险系统，用互联网技术和金融创新使投资与借贷更透明、更高效.优选互联网金融产品随心选。"/>
+    <title>球球金融网官网-专业的互联网金融信息服务平台</title>
     <link rel="stylesheet" type="text/css" href="css/share.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/ingot.css"/>
@@ -38,7 +38,7 @@
 			<c:when test="${empty userSession}">
 				<!-- 未登录状态 -->
 				<div class="register">
-					<h3>动力金融网历史年化收益率</h3>
+					<h3>球球金融网历史年化收益率</h3>
 					<h4><span id="avg">${historyAverageRete}</span>%</h4>
 					<div class="bn_register"><a href="register.jsp" class="btn-1">免费注册</a></div>
 					<div class="login">有账号? <a href="login.jsp">立即登录</a></div>
@@ -46,7 +46,7 @@
 			</c:when>
 			<c:otherwise>
 				<div class="register welcome">
-					<div class="welcome-txt">欢迎 <span>“<b>${userSession.phone}</b>”</span><br/>来动力金融网投资！</div>
+					<div class="welcome-txt">欢迎 <span>“<b>${userSession.phone}</b>”</span><br/>来球球金融网投资！</div>
 					<div class="bn_register"><a href="loan/myCenter" class="btn-1">进入我的小金库</a></div>
 				</div>
 			</c:otherwise>
@@ -160,7 +160,7 @@
 			<div class="pro-box <c:if test='${sLoanInfo.leftProductMoney == 0}'>pro-full</c:if>">
 				<div class="pro-top">
 					<h3>${sLoanInfo.productName}</h3>
-					<p>动力金融网特选小额理财产品</p>
+					<p>球球金融网特选小额理财产品</p>
 				</div>
 				<div class="pro-main">
 					<div class="pro-rate">

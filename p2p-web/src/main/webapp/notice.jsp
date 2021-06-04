@@ -7,7 +7,7 @@
 <meta name="keywords" content="公司动态，大事记，发展" />
 <meta name="description" content=""/>
 <link href="../common/css20140521/style.css" rel="stylesheet" type="text/css" />
-<title>动力金融网 - 专业的互联网金融信息服务平台</title>
+<title>球球金融网 - 专业的互联网金融信息服务平台</title>
 <script type="text/javascript" src="../common/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="../common/js/includeNewSEO.js"></script>
 </head>
@@ -38,7 +38,7 @@
 <a href="../index/partners.html"><i class="nav_2"></i><span>合作伙伴</span></a> 
 <a href="../index/media.html"><i class="nav_3"></i><span>媒体报道</span></a>
 <a href="../index/companydynamic.html" class="on"><i class="nav_4"></i><span>公司动态</span></a>
-<!-- <a href="#"><i class="nav_5"></i><span>动力风采</span></a> -->
+<!-- <a href="#"><i class="nav_5"></i><span>球球风采</span></a> -->
 <a href="../index/hire.html"><i class="nav_6"></i><span>招贤纳士</span></a>
 <a href="../index/contactus.html"><i class="nav_7"></i><span>联系我们</span></a> 
 </div>

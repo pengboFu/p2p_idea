@@ -1,9 +1,11 @@
 package com.bob.p2p.service.loan;
 
+import com.bob.p2p.model.VO.ResultObject;
 import com.bob.p2p.model.loan.BidInfoExEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
   *
@@ -13,7 +15,6 @@ import java.util.List;
   * @version v1.0
   *
   */
-@Service
 public interface BidInfoService {
 
     /**
@@ -35,4 +36,14 @@ public interface BidInfoService {
       */
 
     List<BidInfoExEntity> queryBidInfoListByLoanId(Integer id);
+
+    /**
+      *
+      * @Description: 用户投资
+      * @Author: bob
+      * @Date: 2021/5/30 16:52
+      * @version v1.0
+      *
+      */
+    ResultObject invert(Map<String, Object> paramMap);
 }

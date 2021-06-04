@@ -4,10 +4,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="keywords" content="媒体报道，动力网可靠吗，动力网怎么样" />
+<meta name="keywords" content="媒体报道，球球网可靠吗，球球网怎么样" />
 <meta name="description" content=""/>
     <link href="../common/css20140521/style.css" rel="stylesheet" type="text/css" />
-<title>动力网官网媒体报道-动力网,专业的互联网金融信息服务平台</title>
+<title>球球网官网媒体报道-动力网,专业的互联网金融信息服务平台</title>
 <script type="text/javascript" src="../common/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="../common/js/includeNewSEO.js"></script>
 <script type="text/javascript" src="http://finance.cnr.cn/zt/lundaozf/wqhg/js/swfobject.js"></script>

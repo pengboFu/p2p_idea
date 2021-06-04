@@ -13,8 +13,8 @@
 <link rel="stylesheet" type="text/css" href="../common/css20140521/style.css"/>
 <link rel="stylesheet" type="text/css" href="../common/css20140521/ingot.css"/>
 <link rel="stylesheet" type="text/css" href="../common/css20140521/fullpage.css"/>
-<!-- <title> 动力金融网新手引导,平台介绍-动力金融网-CFCA认证的互联网金融公司</title> -->
-<title>动力金融网新手引导,平台介绍-动力金融网-CFCA认证的互联网金融公司</title>
+<!-- <title> 球球金融网新手引导,平台介绍-球球金融网-CFCA认证的互联网金融公司</title> -->
+<title>球球金融网新手引导,平台介绍-球球金融网-CFCA认证的互联网金融公司</title>
 <!-- <script type="text/javascript" src="../common/js/jquery/jquery-1.9.js"></script> -->
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/jquery-ui-1.10.3.min.js"></script>
@@ -152,14 +152,14 @@ $(function(){
   </div>
   <div id="page2" class="section flash-box" style=" background:#539ce7;">
       <div class="flash-inner inner1" style="top:17%; margin-top:0px;"> 
-      <img src="images/img-1.png" class="inner-img inner-img-1" alt="动力金融网介绍"/> 
-      <img src="images/img-2.png" class="inner-img inner-img-2" alt="动力金融网简介"/> 
+      <img src="images/img-1.png" class="inner-img inner-img-1" alt="球球金融网介绍"/>
+      <img src="images/img-2.png" class="inner-img inner-img-2" alt="球球金融网简介"/>
       <img src="images/img-3.png" class="inner-img inner-img-3" style = "left:584px;" id = "img6"/> 
       <img src="images/img-4.png" class="inner-img inner-img-4 tmove3-a"/> 
       <img src="images/img-5.png" class="inner-img inner-img-5 tmove3-a delay-1"/> 
       <img src="images/img-7.png" class="inner-img inner-img-7"/> 
       <img src="images/img-6.png" class="inner-img inner-img-6"/> 
-      <img src="images/img-8.png" class="inner-img inner-img-8" style = "right:199px; top:78px;" id = "img5" alt="动力金融网快速发展"/>
+      <img src="images/img-8.png" class="inner-img inner-img-8" style = "right:199px; top:78px;" id = "img5" alt="球球金融网快速发展"/>
       <img src="images/img-9.png" class="inner-img inner-img-9" style = "right:56px;" id = "img7"/> 
       <img src="images/img-10.png" class="inner-img inner-img-10" style = "right:28px;" id = "img8"/> 
       <img src="images/img-11.png" class="inner-img inner-img-11 star" /> 
@@ -172,7 +172,7 @@ $(function(){
   </div>
   <div id="page3" class="section flash-box" style=" background:#56DBBE;">
     <div class="flash-inner inner2" style="height:470px; top:13%;"> 
-    <img src="images/img-17.png" class="inner-img inner-img-17 a-auto-1 inner-img-17-a" alt="动力金融模式"/> 
+    <img src="images/img-17.png" class="inner-img inner-img-17 a-auto-1 inner-img-17-a" alt="球球金融模式"/>
     <img id='item0' src="images/img-18.png" class="inner-img inner-img-18 a-auto-1 inner-img-18-a" alt="如何为您提供满意的投资项目"/> 
     <img id='item1' src="images/img-19.png" class="inner-img inner-img-19 a-auto-1 inner-img-19-a" alt="如何 成为最安全的投资平台"/> 
     <img id='item2' src="images/img-20.png" class="inner-img inner-img-20 a-auto-1 inner-img-20-a" alt="如何提供最优质的服务"/> 
@@ -193,7 +193,7 @@ $(function(){
   </div>
   <div id="page5" class="section flash-box" style=" background:#CFEBF9 url(images/img-31.png) no-repeat center top;">
     <div class="flash-inner inner4" style="height:400px; top:23%; padding:0px; margin-top:0px; display:none;"> 
-	    <img src="images/img-32.png" width="192" height="209" class="inner-img inner-img-32" style="top:0%;" alt="选动力金融 多重好礼"/>
+	    <img src="images/img-32.png" width="192" height="209" class="inner-img inner-img-32" style="top:0%;" alt="选球球金融 多重好礼"/>
 	    <a href="../ssl/Register.html" class="bn-wyzc" style="top:70%">我要注册</a>
 	    <a href="../invest/wytz.html" class="bn-wyzc bn-wytz" style="top:70%;display:none;">我要投资</a>
 	  </div>

@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>动力金融网-CFCA认证的互联网金融公司</title>
+<title>球球金融网-CFCA认证的互联网金融公司</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/trafficStatistics.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
@@ -120,7 +120,7 @@
             <dt>我的账户可用</dt>
             <dd>资金(元)：
             <c:choose>
-	            <c:when test="${empty user}">
+	            <c:when test="${empty userSession}">
 	            <span style="font-size:18px;color:#ff6161;vertical-align:bottom;"><a href="${pageContext.request.contextPath}/login.jsp">请登录</a></span>
 	            </c:when>
 	            <c:otherwise>
@@ -171,7 +171,10 @@ function checkMoney () {
 	if (""==bidMoney) {
 		$(".max-invest-money").html("请输入投资金额");
 		return false;
-	} else if (bidMoney < bidMinLimit) {
+	}else if(isNaN(bidMoney)){
+        $(".max-invest-money").html("请输入数字");
+        return false;
+    } else if (bidMoney < bidMinLimit) {
 		$(".max-invest-money").html("");
 		$(".max-invest-money").html("起投投资金额不能低于"+bidMinLimit+"元");
 		return false;
@@ -194,14 +197,15 @@ function checkMoney () {
 function closeit() {
 	$("#failurePayment").hide();
 	$("#dialog-overlay1").hide();
-	window.location.href="${pageContext.request.contextPath}/loan/myCenter";
+	<%--window.location.href="${pageContext.request.contextPath}/loan/myCenter";--%>
+    window.location.href="${pageContext.request.contextPath}/index";
 }
 //立即投资
 function invest() {
 	var flag = checkMoney();
 	if (flag == true) {
 		//判断登录
-		var user = "${user}";
+		var user = "${userSession}";
 		if (user==""||user==null) {
 			window.location.href = "../login.jsp";
 			return false;

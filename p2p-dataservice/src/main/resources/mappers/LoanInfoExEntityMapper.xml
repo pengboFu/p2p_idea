@@ -36,4 +36,22 @@
             </if>
         </where>
     </select>
+
+    <update id="updataleftInfoMoneyByLoanId" >
+        update
+            b_loan_info
+        set
+            bli_left_product_money = bli_left_product_money - #{bidMoney},
+            bli_version = bli_version + 1
+        where
+            bli_id = #{loanId} and bli_version = #{version} and (bli_left_product_money - #{bidMoney})  >= 0;
+    </update>
+
+    <select id="selectLoanInfoByProductStatus" resultMap="loanInfoExEntity">
+        select
+        <include refid="com.bob.p2p.dao.LoanInfoEntityMapper.Base_Column_List"/>
+        from b_loan_info
+        where
+          bli_product_status = #{productStatus}
+    </select>
 </mapper>

@@ -5,9 +5,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.bob.p2p.common.constant.Constants;
 import com.bob.p2p.common.core.utils.HttpClientUtils;
 import com.bob.p2p.config.Config;
+import com.bob.p2p.model.FinanceAccountEntity;
 import com.bob.p2p.model.UserEntity;
 import com.bob.p2p.model.VO.ResultObject;
+import com.bob.p2p.model.user.FinanceAccountExEntity;
 import com.bob.p2p.model.user.UserExEntity;
+import com.bob.p2p.service.user.FinanceAccountService;
 import com.bob.p2p.service.user.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +41,9 @@ public class UserController {
 
     @Autowired
     private Config config;
+
+    @Autowired
+    private FinanceAccountService financeAccountService;
 
     /**
       *
@@ -173,7 +179,7 @@ public class UserController {
 
         mapParam.put("appkey",config.getRealNameAppKey());
 
-        String jsonString = HttpClientUtils.doPost(config.getRealNameUrl(), mapParam);
+//        String jsonString = HttpClientUtils.doPost(config.getRealNameUrl(), mapParam);
 
         JSONObject jsonObject = JSONObject.parseObject("{\"code\":\"10000\",\"charge\":false,\"remain\":1305,\"msg\":\"查询成功\",\"result\":{\"error_code\":0,\"reason\":\"Success\",\"result\":{\"realname\":\"龙球球\",\"idcard\":\"3303***********\",\"isok\":true,\"IdCardInfor\":{\"area\":\"浙江省杭州市区清徐县\",\"sex\":\"男\",\"birthday\":\"1965-3-10\"}}}}");
 //        JSONObject jsonObject = JSONObject.parseObject(jsonString);
@@ -209,5 +215,66 @@ public class UserController {
         map.put(Constants.ERROR_MASSAGE,"通信失败，请稍后重试...");
         return  map;
     }
+    /**
+      *
+      * @Description: 查询账户余额
+      * @Author: bob
+      * @Date: 2021/5/28 16:15
+      * @version v1.0
+      *
+      */
 
+    @RequestMapping(value = "loan/financeAccount")
+    public @ResponseBody FinanceAccountExEntity financeAccount(
+            HttpServletRequest request
+    ){
+        UserEntity userEntity = (UserEntity) request.getSession().getAttribute(Constants.USER_SESSION);
+        FinanceAccountExEntity financeAccountExEntity = financeAccountService.queryFinanceAccountById(userEntity.getId());
+        return financeAccountExEntity;
+    }
+
+    /**
+      *
+      * @Description: 用户登录
+      * @Author: bob
+      * @Date: 2021/5/28 18:16
+      * @version v1.0
+      *
+      */
+    @RequestMapping(value = "loan/login")
+    public @ResponseBody Object login(HttpServletRequest request,
+                                      @RequestParam(value = "phone",required = true) String phone,
+                                      @RequestParam(value = "loginPassword",required = true) String loginPassword,
+                                      @RequestParam(value = "captcha",required = true) String captcha
+                                      ){
+        Map<String,Object>  map = new HashMap<>();
+
+        if (!Pattern.matches("^[0-9a-zA-Z]+$",phone)) {
+            map.put(Constants.ERROR_MASSAGE,"请输入正确的手机号码");
+            return map;
+        }
+
+        //登录操作
+        UserExEntity userExEntity =  userService.login(phone,loginPassword);
+
+        if (null == userExEntity) {
+            map.put(Constants.ERROR_MASSAGE,"账户或密码错误，请核对后重新输入...");
+            return map;
+        }
+
+        request.getSession().setAttribute(Constants.USER_SESSION,userExEntity);
+        map.put(Constants.ERROR_MASSAGE,Constants.OK);
+        return map;
+    }
+
+    @RequestMapping(value = "loan/logout")
+    public String logout(
+        HttpServletRequest request
+    ){
+        //让session失效
+//        request.getSession().invalidate();
+        //让用户session失效
+        request.getSession().removeAttribute(Constants.USER_SESSION);
+        return "redirect:/index";
+    }
 }

@@ -83,6 +83,7 @@
 <!--            <property name="useActualColumnNames" value="true"/>-->
             <generatedKey column="bbi_id" sqlStatement="MySql"  identity="true" />
             <columnRenamingRule searchString="^bbi_" replaceString="" />
+            <columnOverride column="bli_product_desc" javaType="java.lang.String" jdbcType="VARCHAR" />
         </table>
 
         <table tableName="b_loan_info" domainObjectName="LoanInfoEntity"

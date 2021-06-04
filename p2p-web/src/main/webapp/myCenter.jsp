@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>动力金融网 - 专业的互联网金融信息服务平台</title>
+<title>球球金融网 - 专业的互联网金融信息服务平台</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/trafficStatistics.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/share.css"/>

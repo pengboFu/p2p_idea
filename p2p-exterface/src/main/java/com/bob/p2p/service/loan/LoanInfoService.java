@@ -11,8 +11,6 @@ import java.util.Map;
 /**
  * 产品信息服务
  */
-
-@Service
 public interface LoanInfoService {
 
     /**

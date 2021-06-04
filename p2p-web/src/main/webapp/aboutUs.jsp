@@ -4,10 +4,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="keywords" content="关于我们，动力金融网怎么样，动力金融网优势，动力金融网大事记，动力金融网荣誉" />
-<meta name="description" content="动力金融网官网关于我们栏目为您解读动力金融网优势，动力金融网所获荣誉、发展等大事记，让您更真实的了解动力金融网。"/>
+<meta name="keywords" content="关于我们，球球金融网怎么样，球球金融网优势，球球金融网大事记，球球金融网荣誉" />
+<meta name="description" content="球球金融网官网关于我们栏目为您解读球球金融网优势，球球金融网所获荣誉、发展等大事记，让您更真实的了解球球金融网。"/>
 <link href="../common/css20140521/style.css" rel="stylesheet" type="text/css" />
-<title>关于动力金融网,动力金融网怎么样-动力金融网,专业的互联网金融信息服务平台</title>
+<title>关于球球金融网,球球金融网怎么样-球球金融网,专业的互联网金融信息服务平台</title>
 <script type="text/javascript" src="../common/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="../common/js/jquery.tinyscrollbar.min.js"></script>
 <script type="text/javascript" src="../common/js/cufon.js"></script>
@@ -137,7 +137,7 @@ $(function(){
 	z-index:100003;
 }
 </style>
-<!-- <title>关于我们,动力金融网怎么样，-动力金融网优势，荣誉，大事记</title> -->
+<!-- <title>关于我们,球球金融网怎么样，-球球金融网优势，荣誉，大事记</title> -->
 </head>
 <body>
 <div id="header"></div>
@@ -150,12 +150,12 @@ $(function(){
 <a href="../index/partners.html"><i class="nav_2"></i><span>合作伙伴</span></a>
 <a href="../index/media.html"><i class="nav_3"></i><span>媒体报道</span></a>
 <a href="../index/companydynamic.html"><i class="nav_4"></i><span>公司动态</span></a>
-<!-- <a href="#"><i class="nav_5"></i><span>动力金融风采</span></a> -->
+<!-- <a href="#"><i class="nav_5"></i><span>球球金融风采</span></a> -->
 <a href="../index/hire.html"><i class="nav_6"></i><span>招贤纳士</span></a>
 <a href="../index/contactus.html"><i class="nav_7"></i><span>联系我们</span></a> 
 </div><!--二级导航begin-->
 <!-- <div class="jinxin_introduce">
-  <h2>动力金融网</h2>
+  <h2>球球金融网</h2>
   <p>成立于2013年，坐落于北京中关村互联网金融中心<br>
     是一家致力于用科技引擎推动金融创新的互联网金融信息服务平台 <br>
     践行普惠金融理念，真正做到出借人和借款人点对点资金撮合 <br>
@@ -186,18 +186,18 @@ $(function(){
      <div class="moveyou"></div> -->
       <div class="wall_wap" style="diplay:inline;width: 1084px;/* margin-left:76px; */">
       <ul class="clearfix"style="margin-left: -3832px;">
-        <li class="honour_min" onclick="javascript:imgOpen(0);"><img src="../common/images/rongyu_1.jpg" alt="动力金融网-2014中国互联网金融最具竞争力企业"/></li>
-        <li onclick="javascript:imgOpen(1);"><img src="../common/images/rongyu_2.jpg" alt="动力金融网-2014年度互联网金融企业社会责任“金蜘蛛”优秀企业奖"/></li> 
-        <li onclick="javascript:imgOpen(2);"><img src="../common/images/rongyu_3.jpg" alt="动力金融网-2014年度互联网金融企业社会责任“金蜘蛛”互联网金融创新奖"/></li>
-        <li class="honour_min" onclick="javascript:imgOpen(3);"><img src="../common/images/rongyu_4.jpg" alt="动力金融网-2014中国互联网金融最佳风险控制企业"/></li>
-        <li onclick="javascript:imgOpen(4);"><img src="../common/images/rongyu_5.jpg" alt="动力金融网-2014年度中国互联网金融创新奖"/></li>
-        <li onclick="javascript:imgOpen(5);"><img src="../common/images/rongyu_6.jpg" alt="动力金融网-杰出互联网金融创新者"/></li>
-        <li class="honour_min" onclick="javascript:imgOpen(6);"><img src="../common/images/rongyu_7.jpg" alt="动力金融网-网上交易保障中心会员单位"/></li>
-        <li onclick="javascript:imgOpen(7);"><img src="../common/images/rongyu_8.jpg" alt="动力金融网-优秀p2p平台创新奖"/></li>
-        <li onclick="javascript:imgOpen(8);"><img src="../common/images/rongyu_9.jpg" alt="动力金融网-中国电子金融产业联盟会员单位"/></li>
-        <li class="honour_min" onclick="javascript:imgOpen(9);"><img src="../common/images/rongyu_10.jpg" alt="动力金融网-年度领军人物大奖"/></li>
-        <li onclick="javascript:imgOpen(10);"><img src="../common/images/rongyu_11.jpg" alt="动力金融网-中国金融认证中心授权书"/></li>
-        <li onclick="javascript:imgOpen(11);"><img src="../common/images/rongyu_12.jpg" alt="动力金融网-中国互联网协会互联网金融工作委员会发起单位"/></li>
+        <li class="honour_min" onclick="javascript:imgOpen(0);"><img src="../common/images/rongyu_1.jpg" alt="球球金融网-2014中国互联网金融最具竞争力企业"/></li>
+        <li onclick="javascript:imgOpen(1);"><img src="../common/images/rongyu_2.jpg" alt="球球金融网-2014年度互联网金融企业社会责任“金蜘蛛”优秀企业奖"/></li>
+        <li onclick="javascript:imgOpen(2);"><img src="../common/images/rongyu_3.jpg" alt="球球金融网-2014年度互联网金融企业社会责任“金蜘蛛”互联网金融创新奖"/></li>
+        <li class="honour_min" onclick="javascript:imgOpen(3);"><img src="../common/images/rongyu_4.jpg" alt="球球金融网-2014中国互联网金融最佳风险控制企业"/></li>
+        <li onclick="javascript:imgOpen(4);"><img src="../common/images/rongyu_5.jpg" alt="球球金融网-2014年度中国互联网金融创新奖"/></li>
+        <li onclick="javascript:imgOpen(5);"><img src="../common/images/rongyu_6.jpg" alt="球球金融网-杰出互联网金融创新者"/></li>
+        <li class="honour_min" onclick="javascript:imgOpen(6);"><img src="../common/images/rongyu_7.jpg" alt="球球金融网-网上交易保障中心会员单位"/></li>
+        <li onclick="javascript:imgOpen(7);"><img src="../common/images/rongyu_8.jpg" alt="球球金融网-优秀p2p平台创新奖"/></li>
+        <li onclick="javascript:imgOpen(8);"><img src="../common/images/rongyu_9.jpg" alt="球球金融网-中国电子金融产业联盟会员单位"/></li>
+        <li class="honour_min" onclick="javascript:imgOpen(9);"><img src="../common/images/rongyu_10.jpg" alt="球球金融网-年度领军人物大奖"/></li>
+        <li onclick="javascript:imgOpen(10);"><img src="../common/images/rongyu_11.jpg" alt="球球金融网-中国金融认证中心授权书"/></li>
+        <li onclick="javascript:imgOpen(11);"><img src="../common/images/rongyu_12.jpg" alt="球球金融网-中国互联网协会互联网金融工作委员会发起单位"/></li>
         <!-- <li class="honour_min" onclick="javascript:imgOpen(12);"><img src="../common/images/rongyu_13.jpg" /></li> -->
         <li onclick="javascript:imgOpen(29);"><img src="../common/images/rongyu_29.jpg" /></li>
         <li onclick="javascript:imgOpen(13);"><img src="../common/images/rongyu_14.jpg" /></li>
@@ -224,9 +224,9 @@ $(function(){
   <div class="mainBox">
     <div class="homeWap">
       <h2>关于我们</h2>
-      <p style="font-size:16px; line-height:30px; margin-top:30px; color:#444; text-indent:2em;">动力金融网是由动力金融金融信息服务（北京）有限公司打造的互联网金融信息服务平台，成立于2013年，坐落于北京创新腹地中关村。动力金融网致力于用科技引擎推动金融创新，为投资方和融资方提供信息交互、撮合、资信评估等中介服务。</p>
+      <p style="font-size:16px; line-height:30px; margin-top:30px; color:#444; text-indent:2em;">球球金融网是由球球金融金融信息服务（北京）有限公司打造的互联网金融信息服务平台，成立于2013年，坐落于北京创新腹地中关村。球球金融网致力于用科技引擎推动金融创新，为投资方和融资方提供信息交互、撮合、资信评估等中介服务。</p>
       <p style="font-size:16px; line-height:30px;color:#444; text-indent:2em;">公司注册资本金1亿元人民币，且配备一支专业素质高、创新能力强的管理团队，成立短短一年即实现盈利。</p>
-      <p style="font-size:16px; line-height:30px;color:#444; text-indent:2em;">动力金融网坚持与中国金融深化改革同步，在『互联网+』行动计划中，不断践行高效、便捷、普惠的金融信息服务，打造独特互联网金融生态圈。</p>
+      <p style="font-size:16px; line-height:30px;color:#444; text-indent:2em;">球球金融网坚持与中国金融深化改革同步，在『互联网+』行动计划中，不断践行高效、便捷、普惠的金融信息服务，打造独特互联网金融生态圈。</p>
       <ul class="clearfix" style="margin-top:30px;">
         <li><img src="../common/images/aboutus_1.jpg" /></li>
         <li><img src="../common/images/aboutus_2.jpg" /></li>
@@ -243,24 +243,24 @@ $(function(){
 <div class="mainBox memorabilia">
 <h2>大事记</h2>
   <div class="chronicle_body">
-  <div class="chronicle_2016">2016年 动力金融网再创新高</div>
-   <p>2016年，动力金融网将继续坚持产品和业务模式创新，<br />不忘普惠金融初衷，<br />打造中国具有创造力的互联网金融平台。</p>
+  <div class="chronicle_2016">2016年 球球金融网再创新高</div>
+   <p>2016年，球球金融网将继续坚持产品和业务模式创新，<br />不忘普惠金融初衷，<br />打造中国具有创造力的互联网金融平台。</p>
    <div class="chronicle_chakan"><a href="javascript:chronicleOpen3();">查看</a></div>
    <div class="chronicle_line"></div>
-   <div class="chronicle_2015">2015年 动力金融网力争上游</div>
-   <p>2015年，动力金融网将坚持普惠金融的初衷，<br />进一步整合资源，在完善现有产品基础上突破创新。</p>
+   <div class="chronicle_2015">2015年 球球金融网力争上游</div>
+   <p>2015年，球球金融网将坚持普惠金融的初衷，<br />进一步整合资源，在完善现有产品基础上突破创新。</p>
    <div class="chronicle_chakan"><a href="javascript:chronicleOpen();">查看</a></div>
    <div class="chronicle_line"></div>
-   <div class="chronicle_2014">2014年 动力金融网快速成长</div>
-   <p>2014年，动力金融网从无到有，发展迅猛。屡获行业各类殊荣，<br />并一举登陆纽约时代广场，载誉归来。</p>
+   <div class="chronicle_2014">2014年 球球金融网快速成长</div>
+   <p>2014年，球球金融网从无到有，发展迅猛。屡获行业各类殊荣，<br />并一举登陆纽约时代广场，载誉归来。</p>
    <div class="chronicle_chakan"><a href="javascript:chronicleOpen2();">查看</a></div>
    <div class="chronicle_line"></div>
-   <div class="chronicle_2013">2013年 动力金融网成立啦！</div>
-   <p>2013年12月31日 <br />动力金融财富网络科技（北京）有限公司正式成立</p>
+   <div class="chronicle_2013">2013年 球球金融网成立啦！</div>
+   <p>2013年12月31日 <br />球球金融财富网络科技（北京）有限公司正式成立</p>
   </div>
 </div>
 <div class="aboutus_bottom">
-  <div class="reg_jinxin"><a href="../ssl/Register.html">立即注册动力金融网</a></div>
+  <div class="reg_jinxin"><a href="../ssl/Register.html">立即注册球球金融网</a></div>
   <p>暂时不，回<a href="">首页</a>逛逛</p>
 </div>
 <!--页脚start-->
@@ -269,7 +269,7 @@ $(function(){
 <div class="dialog-overlay" id="dialog_id" style="display: none;"></div>
 <!--遮罩层-->
 <!--亿级注册资本begin-->
-<div class="layer-body certiAll" id="layer2" style="display: none;"><a class="layer-close certi" href="javascript:layerClose();"></a><img src="../common/images/yyzz2.jpg" alt="动力金融网-营业执照"/></div>
+<div class="layer-body certiAll" id="layer2" style="display: none;"><a class="layer-close certi" href="javascript:layerClose();"></a><img src="../common/images/yyzz2.jpg" alt="球球金融网-营业执照"/></div>
 <!--亿级注册资本end-->
 <!--百万级风险保障金begin-->
 <div class="layer-body certiAll" id="layer" style="display: none;"><a class="layer-close certi" href="javascript:layerClose();"></a><a href="../common/images/certi-big.jpg" target="_blank" ><img src="../common/images/certi.png" title="请点击查看大图"></a></div>
@@ -281,16 +281,16 @@ $(function(){
 <div class="moveright"></div>
  <div class="honour_body">
   <div class="honour_wap">
-   <div class="honour_box"><img src="../common/images/rongyu_1.jpg" alt="动力金融网-2014中国互联网金融最具竞争力企业"/></div>
-   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_2.jpg" alt="动力金融网-2014年度互联网金融企业社会责任“金蜘蛛”优秀企业奖"/></div>
-   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_3.jpg" alt="动力金融网-2014年度互联网金融企业社会责任“金蜘蛛”互联网金融创新奖"/></div>
-   <div class="honour_box"><img src="../common/images/rongyu_4.jpg" alt="动力金融网-2014中国互联网金融最佳风险控制企业"/></div>
-   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_5.jpg" alt="动力金融网-2014年度中国互联网金融创新奖"/></div>
-   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_6.jpg" alt="动力金融网-杰出互联网金融创新者"/></div>
-   <div class="honour_box"><img src="../common/images/rongyu_7.jpg" alt="动力金融网-网上交易保障中心会员单位"/></div>
-   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_8.jpg" alt="动力金融网-优秀p2p平台创新奖"/></div>
-   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_9.jpg" alt="动力金融网-中国电子金融产业联盟会员单位"/></div>
-   <div class="honour_box"><img src="../common/images/rongyu_10.jpg" alt="动力金融网-年度领军人物大奖"/></div>
+   <div class="honour_box"><img src="../common/images/rongyu_1.jpg" alt="球球金融网-2014中国互联网金融最具竞争力企业"/></div>
+   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_2.jpg" alt="球球金融网-2014年度互联网金融企业社会责任“金蜘蛛”优秀企业奖"/></div>
+   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_3.jpg" alt="球球金融网-2014年度互联网金融企业社会责任“金蜘蛛”互联网金融创新奖"/></div>
+   <div class="honour_box"><img src="../common/images/rongyu_4.jpg" alt="球球金融网-2014中国互联网金融最佳风险控制企业"/></div>
+   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_5.jpg" alt="球球金融网-2014年度中国互联网金融创新奖"/></div>
+   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_6.jpg" alt="球球金融网-杰出互联网金融创新者"/></div>
+   <div class="honour_box"><img src="../common/images/rongyu_7.jpg" alt="球球金融网-网上交易保障中心会员单位"/></div>
+   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_8.jpg" alt="球球金融网-优秀p2p平台创新奖"/></div>
+   <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_9.jpg" alt="球球金融网-中国电子金融产业联盟会员单位"/></div>
+   <div class="honour_box"><img src="../common/images/rongyu_10.jpg" alt="球球金融网-年度领军人物大奖"/></div>
    <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_11.jpg" alt="动力金融网-中国金融认证中心授权书"/></div>
    <div class="honour_box" style="padding-top:118px;"><img src="../common/images/rongyu_12.jpg" alt="动力金融网-中国互联网协会互联网金融工作委员会发起单位"/></div> 
    <div class="honour_box"><img src="../common/images/rongyu_13.jpg" /></div>

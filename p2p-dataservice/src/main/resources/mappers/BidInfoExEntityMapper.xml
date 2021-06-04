@@ -22,4 +22,13 @@
     order by
     bbi_bidTime desc
   </select>
+
+  <select id="selectBidInfoByLoanId" resultMap="bidInfoExEntity">
+    select
+        <include refid="com.bob.p2p.dao.BidInfoEntityMapper.Base_Column_List"/>
+    from
+        b_bid_info
+    where
+        bbi_loanId = #{loanId}
+  </select>
 </mapper>

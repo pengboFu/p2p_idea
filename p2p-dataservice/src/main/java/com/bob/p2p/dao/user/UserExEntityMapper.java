@@ -1,6 +1,7 @@
 package com.bob.p2p.dao.user;
 
 import com.bob.p2p.model.user.UserExEntity;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserExEntityMapper {
     /**
@@ -17,4 +18,13 @@ public interface UserExEntityMapper {
       *
       */
     UserExEntity selectUserByPhone(String phone);
+    /**
+      *
+      * @Description:登录操做查询
+      * @Author: bob
+      * @Date: 2021/5/28 18:27
+      * @version v1.0
+      *
+      */
+    UserExEntity selectUserByPhoneAndPsdForLogin(@Param("phone") String phone,@Param("loginPassword") String loginPassword);
 }

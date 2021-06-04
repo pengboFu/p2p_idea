@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/share.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
     <style type="text/css">body{background:#f2f2f2;}</style>
-    <title>散标,互联网金融产品列表-动力金融网,专业的互联网金融信息服务平台</title>
+    <title>散标,互联网金融产品列表-球球金融网,专业的互联网金融信息服务平台</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 		<div class="pro-box <c:if test="${loanInfo.leftProductMoney eq 0}">pro-full</c:if>">
 		    <div class="pro-top">
 		      <h3>${loanInfo.productName}</h3>
-		      <p>动力金融网特选小额信贷消费产品</p>
+		      <p>球球金融网特选小额信贷消费产品</p>
 		    </div>
 		    <div class="pro-main" style="height:260px;">
 		      <div class="pro-rate">

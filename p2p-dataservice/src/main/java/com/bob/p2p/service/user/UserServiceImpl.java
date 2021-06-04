@@ -83,4 +83,18 @@ public class UserServiceImpl implements UserService{
     public int modifyUserById(UserEntity userParam) {
         return userEntityMapper.updateByPrimaryKeySelective(userParam);
     }
+
+    @Override
+    public UserExEntity login(String phone, String loginPassword) {
+        UserExEntity userExEntity = userExEntityMapper.selectUserByPhoneAndPsdForLogin(phone,loginPassword);
+
+        if (null != userExEntity) {
+            UserEntity userEntityParam = new UserEntity();
+            userEntityParam.setId(userExEntity.getId());
+            userEntityParam.setLastlogintime(new Date());
+            userEntityMapper.updateByPrimaryKeySelective(userEntityParam);
+
+        }
+        return userExEntity;
+    }
 }

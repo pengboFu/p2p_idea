@@ -26,4 +26,13 @@ public interface BidInfoExEntityMapper {
       */
 
     List<BidInfoExEntity> selectBidInfoListByLoanId(Integer id);
+    /**
+      *根据产品id获取投资记录表
+      * @Description: TODO(一句话描述该类的功能)
+      * @Author: bob
+      * @Date: 2021/5/31 13:44
+      * @version v1.0
+      *
+      */
+    List<BidInfoExEntity> selectBidInfoByLoanId(Integer loanId);
 }

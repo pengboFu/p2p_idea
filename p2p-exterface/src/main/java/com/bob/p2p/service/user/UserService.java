@@ -5,7 +5,6 @@ import com.bob.p2p.model.VO.ResultObject;
 import com.bob.p2p.model.user.UserExEntity;
 import org.springframework.stereotype.Service;
 
-@Service
 public interface UserService {
 
     /**
@@ -42,4 +41,13 @@ public interface UserService {
       *
       */
     int modifyUserById(UserEntity userParam);
+    /**
+      *
+      * @Description: 用户登录
+      * @Author: bob
+      * @Date: 2021/5/28 18:20
+      * @version v1.0
+      *
+      */
+    UserExEntity login(String phone, String loginPassword);
 }

@@ -75,6 +75,42 @@ function Login() {
 	   	}
 	});
 }
+
+//验证码验证
+function checkCaptcha() {
+	var rtn = false;
+	var captcha = $.trim($("#captcha").val());
+	if (captcha == "") {
+		showError('captcha','请输入图形验证码');
+		return false;
+	} else {
+		$.ajax({
+			type:"POST",
+			url:"loan/verifyCaptcha",
+			dataType: "text",
+			async: false,
+			data:"captcha="+captcha,
+			success: function(jsonObject) {
+				var obj = jQuery.parseJSON(jsonObject);
+				if (obj.errorMessage =="ok") {
+					showSuccess('captcha');
+					rtn = true;
+				} else {
+					showError('captcha', obj.errorMessage);
+					rtn = false;
+				}
+			},
+			error:function() {
+				showError('captcha','网络错误');
+				rtn = false;
+			}
+		});
+	}
+	if (!rtn) {
+		return false;
+	}
+	return true;
+}
 //用户及交易统计
 function loadStat () {
 	$.ajax({
@@ -87,4 +123,23 @@ function loadStat () {
 		   $("#gold").html(jsonObject.allBidMoney);
 	   	}
 	});
+}
+
+$(function (){
+	loadStart();
+})
+
+function  loadStart(){
+	$.ajax({
+		url:"loan/loanStart",
+		type:"get",
+		success:function (msg){
+			$(".historyAverageRate").html(msg.historyAverageRete);
+			$("#allbidMoney").html(msg.allBidMoney);
+			$("#allUserCount").html(msg.userTotal);
+		},
+		error:function (){
+
+		}
+	})
 }
