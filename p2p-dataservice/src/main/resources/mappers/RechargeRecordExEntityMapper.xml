@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.p2p.dao.loan.RechargeRecordExEntityMapper">
+  <resultMap id="rechargeRecordEntityResultMap"  type="com.bob.p2p.model.loan.RechargeRecordExEntity" extends="com.bob.p2p.dao.RechargeRecordEntityMapper.BaseResultMap">
+
+  </resultMap>
+
+  <select id="selectRechargeRecordListByUid" resultMap="rechargeRecordEntityResultMap">
+    select
+        <include refid="com.bob.p2p.dao.RechargeRecordEntityMapper.Base_Column_List"/>
+    from
+     b_recharge_record
+    where
+        brr_uid = #{uid}
+    order by
+      brr_rechargeTime  desc
+    limit #{currentPage},#{pageSize}
+  </select>
+  <select id="selectRechargeRecordByUidTotal" resultType="java.lang.Long">
+    select
+        count(*)
+    from
+      b_recharge_record
+    where
+      brr_uid = #{uid}
+  </select>
+  <update id="updateRechargeRecordByRecordNo"  parameterType="com.bob.p2p.model.RechargeRecordEntity" >
+    update
+      b_recharge_record
+    <set>
+      <if test="rechargestatus != null">
+        brr_rechargeStatus = #{rechargestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="rechargemoney != null">
+        brr_rechargeMoney = #{rechargemoney,jdbcType=DOUBLE},
+      </if>
+      <if test="rechargetime != null">
+        brr_rechargeTime = #{rechargetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rechargedesc != null">
+        brr_rechargeDesc = #{rechargedesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where brr_rechargeNo =  #{rechargeno,jdbcType=VARCHAR}
+  </update>
+</mapper>

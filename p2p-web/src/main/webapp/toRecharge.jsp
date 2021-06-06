@@ -21,10 +21,14 @@ $(document).ready(function() {
 	$('#chongzhi').addClass('on');
 	//选择第三种支付方式
 	$('#alipay').click(function(){
+        $("#payType").val("");
+	    $("#payType").val("aliPay");
 		$(this).addClass('img_on').append("<i></i>");
 		$(this).parent().siblings().children().removeClass('img_on');
 	});
 	$('#weixinpay').click(function(){
+        $("#payType").val("");
+        $("#payType").val("wxPay");
 		$(this).addClass('img_on').append("<i></i>");
 		$(this).parent().siblings().children().removeClass('img_on');
 	});
@@ -58,12 +62,22 @@ function checkData() {
 }
 //提交表单前验证表单数据
 function submitForm () {
+       var rechargeMoney = $.trim($("#rechargeMoney").val());
+       var payType = $.trim($("#payType").val());
+
 	if (checkData()) {
 		$(".input_text").removeClass("input-red");
 		$("#div1_1").hide();
 		$("#dialog-overlay").show();
 		$("#failurePayment").show();
 		$("#rechargeForm").submit();
+		if(payType == "aliPay"){
+		    $("#alipayRachargeMoney").val(rechargeMoney);
+            $("#alipayRechargeForm").submit();
+        }else {
+            $("#wxpayRachargeMoney").val(rechargeMoney);
+            $("#wxpayRechargeForm").submit();
+        }
 	}
 }
 </script> 
@@ -92,7 +106,7 @@ function submitForm () {
     <div class="leftTitle"><span class="on">第三方支付平台</span></div>
     
     <!--未认证start-->
-    <c:if test="${empty user.name}">
+    <c:if test="${empty userSession.name}">
     <div class="unrecognized" style = "display:block;" id="unrecognized1">
      <h3>您尚未通过实名认证，通过实名认证后可进行充值操作</h3>
      <a class="input_btn" href="${pageContext.request.contextPath}/realName.jsp">认 证</a>
@@ -101,18 +115,24 @@ function submitForm () {
    	<!--未认证end-->
    	
    	<!-- 充值start -->
-   	<c:if test="${!empty user.name}">
-   	<form id="rechargeForm" action="${pageContext.request.contextPath}/loan/toRecharge" method="post" target="_blank">
+   	<c:if test="${!empty userSession.name}">
     <div class="payInvest" style="display:block;">
           <div class="investMain">
             <h3>请选择支付平台</h3>
             <div class="investContent">
+                <input type="hidden" id="payType" value=""/>
               <div class="investOver clearfix" id = "banks2">
+                  <form id="alipayRechargeForm" action="${pageContext.request.contextPath}/loan/toAlipayRecharge" method="post" target="_blank">
+                    <input type="hidden" id="alipayRachargeMoney" name="rachargeMoney" value=""/>
+                  </form>
                 <label>
 	                <div class="img_cnt" id="alipay">
 	                	<img src="${pageContext.request.contextPath}/images/alipay.jpg"/>
 	                </div>
                 </label>
+                  <form id="wxpayRechargeForm" action="${pageContext.request.contextPath}/loan/toWxpayRecharge" method="post" target="_blank">
+                      <input type="hidden" id="wxpayRachargeMoney" name="rachargeMoney" value=""/>
+                  </form>
                 <label>
 	                <div class="img_cnt" id="weixinpay">
 	                	<img src="${pageContext.request.contextPath}/images/weixinpay.jpg"/>
@@ -139,7 +159,7 @@ function submitForm () {
                4. 如果充值中出现问题，请联系客服400-890-0000。</p>
           </div>
       </div>
-   	  </form>
+
    	  </c:if>
    	  <!-- 充值end -->
    </div>

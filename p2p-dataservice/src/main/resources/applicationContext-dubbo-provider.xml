@@ -20,5 +20,8 @@
 	<dubbo:service interface="com.bob.p2p.service.user.FinanceAccountService" ref="financeAccountServiceImpl" version="1.0.0" timeout="15000"/>
 		<!-- 收益业务	-->
 	<dubbo:service interface="com.bob.p2p.service.loan.IncomRecordService" ref="incomRecordServiceImpl" version="1.0.0" timeout="100000"/>
-
+		<!-- 充值业务	-->
+	<dubbo:service interface="com.bob.p2p.service.loan.RechargeRecordService" ref="rechargeRecordServiceImpl" version="1.0.0" timeout="15000"/>
+	    <!-- 唯一数字业务	-->
+	<dubbo:service interface="com.bob.p2p.service.loan.OnlyNumberService" ref="onlyNumberServiceImpl" version="1.0.0" timeout="15000"/>
 </beans>

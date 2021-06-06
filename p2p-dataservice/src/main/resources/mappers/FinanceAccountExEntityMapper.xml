@@ -32,4 +32,12 @@
         where
             ufa_uid = #{uid}
     </update>
+    <update id="updateFinanaceAccountByRecharge">
+        update
+            u_finance_account
+        set
+            ufa_available_money = ufa_available_money + #{rechargeAmount}
+        where
+            ufa_uid = #{uid}
+    </update>
 </mapper>

@@ -110,4 +110,22 @@ public class Constants  {
       *
       */
     public static final String USER_SESSION = "userSession";
+    /**
+      * 投资排行榜
+      * @Description:
+      * @Author: bob
+      * @Date: 2021/6/4 13:30
+      * @version v1.0
+      *
+      */
+    public static final String INVEST_TOP = "investTop";
+    /**
+      * 唯一數字
+      * @Description:
+      * @Author: bob
+      * @Date: 2021/6/4 21:03
+      * @version v1.0
+      *
+      */
+    public static final Object ONLY_NUMBER = "onlyNumber";
 }

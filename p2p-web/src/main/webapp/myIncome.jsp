@@ -53,11 +53,11 @@ $(document).ready(function() {
        </dt>
 		<c:forEach items="${incomeRecordList}" var="incomeRecord">
        	<dd>
-	       <div class="deal-time"><fmt:formatDate value="${incomeRecord.incomeDate}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
-	       <div class="deal-name">${incomeRecord.incomeMoney}</div>
-	       <div class="deal-type" style="width:120px">${incomeRecord.loanInfo.productName}</div>
-	       <div class="deal-money">${incomeRecord.bidMoney}</div>
-	       <div class="deal-balance"><c:if test="${incomeRecord.incomeStatus eq 0}">收益未返</c:if><c:if test="${incomeRecord.incomeStatus eq 1}">收益已返</c:if></div>
+	       <div class="deal-time"><fmt:formatDate value="${incomeRecord.incomedate}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+	       <div class="deal-name">${incomeRecord.incomemoney}</div>
+	       <div class="deal-type" style="width:120px">${incomeRecord.loanInfoEntity.productName}</div>
+	       <div class="deal-money">${incomeRecord.bidmoney}</div>
+	       <div class="deal-balance"><c:if test="${incomeRecord.incomestatus eq 0}">收益未返</c:if><c:if test="${incomeRecord.incomestatus eq 1}">收益已返</c:if></div>
        	</dd>
        	</c:forEach>
       	&nbsp;&nbsp;

@@ -1,9 +1,12 @@
 package com.bob.p2p.web;
 
 import com.bob.p2p.common.constant.Constants;
+import com.bob.p2p.model.UserEntity;
+import com.bob.p2p.model.VO.BidUserTop;
 import com.bob.p2p.model.VO.PagenationVO;
 import com.bob.p2p.model.loan.BidInfoExEntity;
 import com.bob.p2p.model.LoanInfoEntity;
+import com.bob.p2p.model.loan.LoanInfoExEntity;
 import com.bob.p2p.model.user.FinanceAccountExEntity;
 import com.bob.p2p.model.user.UserExEntity;
 import com.bob.p2p.service.loan.BidInfoService;
@@ -86,14 +89,15 @@ public class LoanInfoController {
         if (mod >= 0 ) {
             totalPage = totalPage + 1;
         }
-        //TODO
+
         //投资排行榜
+        List<BidUserTop>  userTops =  bidInfoService.queryBidUserTop();
 
         model.addAttribute("totalRows",pagenationVO.getToltal());
         model.addAttribute("totalPage",totalPage);
         model.addAttribute("loanInfoList",pagenationVO.getDateList());
         model.addAttribute("currentPage",currentPage);
-
+        model.addAttribute("topUserList",userTops);
         return "loan";
     }
 
@@ -148,5 +152,8 @@ public class LoanInfoController {
         resoutMap.put(Constants.ALL_BID_MONEY,allBidMoney);
         return resoutMap;
     }
+
+
+
 
 }

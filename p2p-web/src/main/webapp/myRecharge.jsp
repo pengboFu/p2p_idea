@@ -52,16 +52,16 @@ $(document).ready(function(){
        <dt><span class="deal-time">充值时间</span><span class="deal-name">充值对象</span><span class="deal-type" style="width:120px">类型</span><span class="deal-money">充值金额(元)</span><span class="deal-balance">充值状态</span></dt>
        <c:forEach items="${rechargeRecordList}" var="rechargeRecord">
        <dd>
-	       <div class="deal-time"><fmt:formatDate value="${rechargeRecord.rechargeTime}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
-	       <div class="deal-name">${rechargeRecord.rechargeDesc}</div>
+	       <div class="deal-time"><fmt:formatDate value="${rechargeRecord.rechargetime}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+	       <div class="deal-name">${rechargeRecord.rechargedesc}</div>
 	       <div class="deal-type" style="width:120px">充值</div>
-	       <div class="deal-money">${rechargeRecord.rechargeMoney}</div>
+	       <div class="deal-money">${rechargeRecord.rechargemoney}</div>
 	       <div class="deal-balance">
 	       <c:choose>
-	       	<c:when test="${rechargeRecord.rechargeStatus eq 1}">
+	       	<c:when test="${rechargeRecord.rechargestatus eq 1}">
 	       		充值成功
 	       	</c:when>
-	       	<c:when test="${rechargeRecord.rechargeStatus eq 0}">
+	       	<c:when test="${rechargeRecord.rechargestatus eq 0}">
 	       		充值中
 	       	</c:when>
 	       	<c:otherwise>

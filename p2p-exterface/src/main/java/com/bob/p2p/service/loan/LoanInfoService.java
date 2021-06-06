@@ -3,6 +3,7 @@ package com.bob.p2p.service.loan;
 
 import com.bob.p2p.model.VO.PagenationVO;
 import com.bob.p2p.model.LoanInfoEntity;
+import com.bob.p2p.model.loan.LoanInfoExEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,4 +48,5 @@ public interface LoanInfoService {
       */
 
     LoanInfoEntity queryLoanInfoById(Integer id);
+
 }

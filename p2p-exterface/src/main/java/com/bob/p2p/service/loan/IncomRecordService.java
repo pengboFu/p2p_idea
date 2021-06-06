@@ -1,7 +1,12 @@
 package com.bob.p2p.service.loan;
 
 
+import com.bob.p2p.model.VO.PagenationVO;
+import com.bob.p2p.model.loan.IncomeRecordExEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 /**
   *
@@ -32,4 +37,20 @@ public interface IncomRecordService {
       *
       */
     void generateIncomeBack();
+    /**
+      * 用户最近收益 带分页
+      * @Author: bob
+      * @Date: 2021/6/4 23:14
+      * @version v1.0
+      *
+      */
+    List<IncomeRecordExEntity> queryIncomRecordListTopByUid(Map<String, Object> paramMap);
+    /**
+      *查看用户全部收益
+      * @Author: bob
+      * @Date: 2021/6/5 1:20
+      * @version v1.0
+      *
+      */
+    PagenationVO<IncomeRecordExEntity> queryIncomeRecordListByUid(Map<String, Object> paramMap);
 }

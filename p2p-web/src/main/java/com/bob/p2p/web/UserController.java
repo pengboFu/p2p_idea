@@ -5,16 +5,23 @@ import com.alibaba.fastjson.JSONObject;
 import com.bob.p2p.common.constant.Constants;
 import com.bob.p2p.common.core.utils.HttpClientUtils;
 import com.bob.p2p.config.Config;
-import com.bob.p2p.model.FinanceAccountEntity;
-import com.bob.p2p.model.UserEntity;
+import com.bob.p2p.model.*;
+import com.bob.p2p.model.VO.PagenationVO;
 import com.bob.p2p.model.VO.ResultObject;
+import com.bob.p2p.model.loan.BidInfoExEntity;
+import com.bob.p2p.model.loan.IncomeRecordExEntity;
+import com.bob.p2p.model.loan.RechargeRecordExEntity;
 import com.bob.p2p.model.user.FinanceAccountExEntity;
 import com.bob.p2p.model.user.UserExEntity;
+import com.bob.p2p.service.loan.BidInfoService;
+import com.bob.p2p.service.loan.IncomRecordService;
+import com.bob.p2p.service.loan.RechargeRecordService;
 import com.bob.p2p.service.user.FinanceAccountService;
 import com.bob.p2p.service.user.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +29,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 /**
@@ -44,6 +53,15 @@ public class UserController {
 
     @Autowired
     private FinanceAccountService financeAccountService;
+
+    @Autowired
+    private BidInfoService bidInfoService;
+
+    @Autowired
+    private RechargeRecordService rechargeRecordService;
+
+    @Autowired
+    private IncomRecordService incomRecordService;
 
     /**
       *
@@ -181,7 +199,7 @@ public class UserController {
 
 //        String jsonString = HttpClientUtils.doPost(config.getRealNameUrl(), mapParam);
 
-        JSONObject jsonObject = JSONObject.parseObject("{\"code\":\"10000\",\"charge\":false,\"remain\":1305,\"msg\":\"查询成功\",\"result\":{\"error_code\":0,\"reason\":\"Success\",\"result\":{\"realname\":\"龙球球\",\"idcard\":\"3303***********\",\"isok\":true,\"IdCardInfor\":{\"area\":\"浙江省杭州市区清徐县\",\"sex\":\"男\",\"birthday\":\"1965-3-10\"}}}}");
+        JSONObject jsonObject = JSONObject.parseObject("{\"code\":\"10000\",\"charge\":false,\"remain\":1305,\"msg\":\"查询成功\",\"result\":{\"error_code\":0,\"reason\":\"Success\",\"result\":{\"realname\":\"球球\",\"idcard\":\"3303***********\",\"isok\":true,\"IdCardInfor\":{\"area\":\"浙江省杭州市区清徐县\",\"sex\":\"男\",\"birthday\":\"1965-3-10\"}}}}");
 //        JSONObject jsonObject = JSONObject.parseObject(jsonString);
 
         String code = jsonObject.getString("code");
@@ -266,7 +284,14 @@ public class UserController {
         map.put(Constants.ERROR_MASSAGE,Constants.OK);
         return map;
     }
-
+    /**
+      *  登出操作
+      * @Description: TODO(一句话描述该类的功能)
+      * @Author: bob
+      * @Date: 2021/6/4 18:01
+      * @version v1.0
+      *
+      */
     @RequestMapping(value = "loan/logout")
     public String logout(
         HttpServletRequest request
@@ -276,5 +301,83 @@ public class UserController {
         //让用户session失效
         request.getSession().removeAttribute(Constants.USER_SESSION);
         return "redirect:/index";
+    }
+    /**
+      * 我的小金库
+      * @Description:
+      * @Author: bob
+      * @Date: 2021/6/4 21:12
+      * @version v1.0
+      *
+      */
+    @RequestMapping(value = "loan/myCenter")
+    public String myCenter(
+            HttpServletRequest request,
+            Model model
+    ){
+        UserEntity userEntity = (UserEntity) request.getSession().getAttribute(Constants.USER_SESSION);
+
+        FinanceAccountExEntity financeAccountExEntity = financeAccountService.queryFinanceAccountById(userEntity.getId());
+        //准备请求的参数
+        Map<String,Object> paramMap = new ConcurrentHashMap<String,Object>();
+        paramMap.put("uid",userEntity.getId());
+        paramMap.put("currentPage",0);//当前页码
+        paramMap.put("pageSize",5);//每页显示条数
+
+        //最近投资
+        List<BidInfoExEntity> bidInfoExEntityList = bidInfoService.queryBidInfoListTopByUid(paramMap);
+
+        //最近充值
+        List<RechargeRecordExEntity> rechargeRecordEntities = rechargeRecordService.queryRechargeRecordListTopByUid(paramMap);
+
+        //最近收益
+        List<IncomeRecordExEntity> incomeRecordEntities = incomRecordService.queryIncomRecordListTopByUid(paramMap);
+
+        model.addAttribute("bidInfoList",bidInfoExEntityList);
+        model.addAttribute("rechargeRecordList",rechargeRecordEntities);
+        model.addAttribute("incomeRecordList",incomeRecordEntities);
+        model.addAttribute("financeAccountExEntity",financeAccountExEntity);
+        return  "myCenter";
+    }
+
+    /**
+     * 查看全部收益
+     * @Author: bob
+     * @Date: 2021/6/5 0:10
+     * @version v1.0
+     *
+     */
+    @RequestMapping(value = "loan/myIncome")
+    public String myIncome(HttpServletRequest request, Model model,
+                           @RequestParam(value = "currentPage",required = false) Integer currentPage
+    ){
+        UserEntity userEntity = (UserEntity) request.getSession().getAttribute(Constants.USER_SESSION);
+        Map<String,Object> paramMap = new HashMap<>();
+
+        if (null == currentPage || currentPage == 0) {
+            currentPage = 1;
+        }
+        paramMap.put("uid",userEntity.getId());
+
+        int pageSize = 10;
+
+        paramMap.put("currentPage",(currentPage - 1) * pageSize);
+
+        paramMap.put("pageSize",pageSize);
+
+        PagenationVO<IncomeRecordExEntity> incomeRecordExEntityPagenationVO = incomRecordService.queryIncomeRecordListByUid(paramMap);
+
+        int totalPage = incomeRecordExEntityPagenationVO.getToltal().intValue() / pageSize;
+
+        int mod = totalPage % pageSize;
+
+        if (mod >= 0 ) {
+            totalPage = totalPage + 1;
+        }
+        model.addAttribute("totalRows",incomeRecordExEntityPagenationVO.getToltal());
+        model.addAttribute("totalPage",totalPage);
+        model.addAttribute("incomeRecordList",incomeRecordExEntityPagenationVO.getDateList());
+        model.addAttribute("currentPage",currentPage);
+        return "myIncome";
     }
 }

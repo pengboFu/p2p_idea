@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bob.p2p.dao.loan.LoanInfoExEntityMapper" >
-    <resultMap id="loanInfoExEntity" type="com.bob.p2p.model.LoanInfoEntity" extends="com.bob.p2p.dao.LoanInfoEntityMapper.BaseResultMap">
-
-
+    <resultMap id="loanInfoExEntity" type="com.bob.p2p.model.loan.LoanInfoExEntity" extends="com.bob.p2p.dao.LoanInfoEntityMapper.BaseResultMap">
     </resultMap>
 
     <!-- 查询历史年化收益率 -->

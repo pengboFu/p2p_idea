@@ -11,7 +11,9 @@ import com.bob.p2p.dao.loan.LoanInfoExEntityMapper;
 import com.bob.p2p.dao.user.FinanceAccountExEntityMapper;
 import com.bob.p2p.model.IncomeRecordEntity;
 import com.bob.p2p.model.LoanInfoEntity;
+import com.bob.p2p.model.VO.PagenationVO;
 import com.bob.p2p.model.loan.BidInfoExEntity;
+import com.bob.p2p.model.loan.IncomeRecordExEntity;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -157,5 +159,20 @@ public class IncomRecordServiceImpl implements IncomRecordService{
                 logger.info("更新收益记录标识为" +incomeRecord.getId() + "失败");
             }
         }
+    }
+
+    @Override
+    public List<IncomeRecordExEntity> queryIncomRecordListTopByUid(Map<String, Object> paramMap) {
+        return incomeRecordExEntityMapper.selectIncomeRecordTopByUid(paramMap);
+    }
+
+    @Override
+    public PagenationVO<IncomeRecordExEntity> queryIncomeRecordListByUid(Map<String, Object> paramMap) {
+        PagenationVO<IncomeRecordExEntity> pagenationVO = new PagenationVO<>();
+        Long bidInfoTotal =  incomeRecordExEntityMapper.selectIncomeRecordByUidTotal(paramMap.get("uid").toString());
+        pagenationVO.setToltal(bidInfoTotal);
+        List<IncomeRecordExEntity> bidInfoExEntityList = incomeRecordExEntityMapper.selectIncomeRecordTopByUid(paramMap);
+        pagenationVO.setDateList(bidInfoExEntityList);
+        return pagenationVO;
     }
 }

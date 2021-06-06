@@ -103,7 +103,7 @@
 							<p class="text2">剩余可投金额</p>
 						</li>
 						<li class="box4">
-							<a href="loan/loanInfo?id=${xLoanInfo.id}" class="go-invest">立即投资</a>
+							<a href="loan/loanInfo?id=${xloanInfo.id}" class="go-invest">立即投资</a>
 						</li>
 					</ul>
 				</div>

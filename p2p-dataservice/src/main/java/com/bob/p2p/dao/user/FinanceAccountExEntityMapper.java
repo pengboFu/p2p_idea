@@ -35,4 +35,12 @@ public interface FinanceAccountExEntityMapper {
       *
       */
     int updataFinanceAccountByIncomeBack(Map<String, Object> paramMap);
+    /**
+      * 更新账户余额
+      * @Author: bob
+      * @Date: 2021/6/6 11:44
+      * @version v1.0
+      *
+      */
+    int updateFinanaceAccountByRecharge(Map<String, Object> paramMap);
 }

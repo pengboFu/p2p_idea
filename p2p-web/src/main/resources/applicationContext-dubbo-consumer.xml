@@ -21,5 +21,10 @@
 	<dubbo:reference id="bidInfoService" interface="com.bob.p2p.service.loan.BidInfoService" check="false" version="1.0.0"/>
 	<!-- 引用远程服务  账户业务 -->
 	<dubbo:reference id="financeAccountService" interface="com.bob.p2p.service.user.FinanceAccountService" check="false" version="1.0.0"/>
-
+	<!-- 引用远程服务  充值业务 -->
+	<dubbo:reference id="RechargeRecordService" interface="com.bob.p2p.service.loan.RechargeRecordService" check="false" version="1.0.0"/>
+	<!-- 引用远程服务  唯一数字业务 -->
+	<dubbo:reference id="OnlyNumberService" interface="com.bob.p2p.service.loan.OnlyNumberService" check="false" version="1.0.0"/>
+	<!-- 引用远程服务  收益业务 -->
+	<dubbo:reference id="IncomRecordService" interface="com.bob.p2p.service.loan.IncomRecordService" check="false" version="1.0.0"/>
 </beans>

@@ -178,15 +178,18 @@ function checkMoney () {
 		$(".max-invest-money").html("");
 		$(".max-invest-money").html("起投投资金额不能低于"+bidMinLimit+"元");
 		return false;
-	} else if (bidMoney%100 != 0) {
+	}
+	else if (bidMoney%100 != 0) {
 		$(".max-invest-money").html("");
 		$(".max-invest-money").html("投资金额应为100的整数倍");
 		return false;
-	} else if (bidMoney > bidMaxLimit) {
-		$(".max-invest-money").html("");
-		$(".max-invest-money").html("单笔投资金额不能超过"+bidMaxLimit+"元");
-		return false;
-	} else {
+	}
+	// else if (bidMoney > bidMaxLimit) {
+	// 	$(".max-invest-money").html("");
+	// 	$(".max-invest-money").html("单笔投资金额不能超过"+bidMaxLimit+"元");
+	// 	return false;
+	// }
+	else {
 		//计算预计本息收益
 		var income = bidMoney * ${loanInfo.rate} / 100 / 365 * ${loanInfo.cycle} * 30;
 		var shouyi = Math.round(income * Math.pow(10, 2)) / Math.pow(10, 2);  
@@ -197,8 +200,8 @@ function checkMoney () {
 function closeit() {
 	$("#failurePayment").hide();
 	$("#dialog-overlay1").hide();
-	<%--window.location.href="${pageContext.request.contextPath}/loan/myCenter";--%>
-    window.location.href="${pageContext.request.contextPath}/index";
+	window.location.href="${pageContext.request.contextPath}/loan/myCenter";
+    <%--window.location.href="${pageContext.request.contextPath}/index";--%>
 }
 //立即投资
 function invest() {

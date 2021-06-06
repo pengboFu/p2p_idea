@@ -13,7 +13,7 @@ if (!referrer) {
 //按键盘Enter键即可登录
 $(document).keyup(function(event){
 	if(event.keyCode == 13){
-		login();
+		Login();
 	}
 });
 //输入域失去焦点，将红色提示信息清除

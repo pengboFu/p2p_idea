@@ -110,4 +110,15 @@ public class DateUtils {
 
         return  calendar.getTime();
     }
+    /**
+      *获得一个时间戳
+      * @Description:
+      * @Author: bob
+      * @Date: 2021/6/4 20:55
+      * @version v1.0
+      *
+      */
+    public static String getTimeStamp() {
+        return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    }
 }
