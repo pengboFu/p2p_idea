@@ -132,7 +132,7 @@ public class LoanInfoController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/loanStart")
+    @RequestMapping(value = "/loan/loanStart")
     public @ResponseBody Object loanStart(
             HttpServletRequest httpServletRequest
     ){

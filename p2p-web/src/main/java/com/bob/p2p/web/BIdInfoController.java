@@ -35,7 +35,7 @@ public class BIdInfoController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/invest")
+    @RequestMapping(value = "/loan/invest")
     public @ResponseBody Object inverst(
             HttpServletRequest request,
             @RequestParam(value = "loanId",required = true) final String loanId,
@@ -69,7 +69,7 @@ public class BIdInfoController {
      * @version v1.0
      *
      */
-    @RequestMapping(value = "loan/myInvest")
+    @RequestMapping(value = "/loan/myInvest")
     public String myInvest(HttpServletRequest request, Model model,
                            @RequestParam(value = "currentPage",required = false) Integer currentPage
     ){

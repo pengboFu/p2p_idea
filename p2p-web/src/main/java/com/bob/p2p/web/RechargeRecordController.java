@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.bob.p2p.common.constant.Constants;
 import com.bob.p2p.common.core.utils.DateUtils;
 import com.bob.p2p.common.core.utils.HttpClientUtils;
+import com.bob.p2p.config.Config;
 import com.bob.p2p.model.RechargeRecordEntity;
 import com.bob.p2p.model.UserEntity;
 import com.bob.p2p.model.VO.PagenationVO;
@@ -40,6 +41,9 @@ public class RechargeRecordController {
     @Autowired
     private RechargeRecordService rechargeRecordService;
 
+    @Autowired
+    private Config config;
+
     /**
       * 支付宝充值
       * @Description:
@@ -48,7 +52,7 @@ public class RechargeRecordController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/toAlipayRecharge")
+    @RequestMapping(value = "/loan/toAlipayRecharge")
     public String toAlipayRecharge(HttpServletRequest request, Model model,
                                    @RequestParam(value = "rachargeMoney",required = true) Double alipayRachargeMoney
                                    ){
@@ -71,7 +75,7 @@ public class RechargeRecordController {
 
         if (0 < addRechargeRecord) {
             //向pay工程传递参数
-            model.addAttribute("alipay_pay_url","http://localhost:9090/pay/api/aliPay");
+            model.addAttribute("alipay_pay_url",config.getAlipayURL());
             model.addAttribute("rechargeMoney",alipayRachargeMoney);
             model.addAttribute("rechargeNo",rechargeNo);
             model.addAttribute("subject","支付宝充值");
@@ -92,12 +96,33 @@ public class RechargeRecordController {
      * @version v1.0
      *
      */
-    @RequestMapping(value = "loan/toWxpayRecharge")
+    @RequestMapping(value = "/loan/toWxpayRecharge")
     public String toWxpayRecharge(HttpServletRequest request, Model model,
                                    @RequestParam(value = "rachargeMoney",required = true) Double wxpayRachargeMoney
     ){
+        //获取用户信息，by session
+        UserEntity userEntity = (UserEntity) request.getSession().getAttribute(Constants.USER_SESSION);
+
+        //生成一个全局唯一的充值订单号  = 时间戳 + redis 全局唯一数字
+        String rechargeNo = DateUtils.getTimeStamp() + onlyNumberService.getOnlyNumber();
 
 
+        //生成充值記錄 （充值中）
+        RechargeRecordEntity rechargeRecordEntity = new RechargeRecordEntity();
+        rechargeRecordEntity.setUid(userEntity.getId());
+        rechargeRecordEntity.setRechargemoney(wxpayRachargeMoney);
+        rechargeRecordEntity.setRechargetime(new Date());
+        rechargeRecordEntity.setRechargestatus("0");
+        rechargeRecordEntity.setRechargeno(rechargeNo);
+        rechargeRecordEntity.setRechargedesc("微信充值");
+        int addRechargeRecord =  rechargeRecordService.addRechargeRecord(rechargeRecordEntity);
+        if (0 < addRechargeRecord) {
+            //向pay工程传递参数
+
+        }else {
+            model.addAttribute("trade_msg","充值人数过多，请稍后重试...");
+            return "toRechargeBack";
+        }
 
         return null;
     }
@@ -108,20 +133,21 @@ public class RechargeRecordController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/alipayBack")
+    @RequestMapping(value = "/loan/alipayBack")
     public String alipayBack(
             HttpServletRequest request, Model model,
             @RequestParam(value = "signVerified",required = true) String signVerified,
             @RequestParam(value = "total_amount",required = true) Double total_amount,
-            @RequestParam(value = "out_trade_no",required = true) String out_trade_no
+            @RequestParam(value = "out_trade_no",required = true) String outTradeNo
     ){
         //判断验签结果
         if (StringUtils.containsIgnoreCase("SUCCESS",signVerified)) {
             Map<String,Object> paramMap = new HashMap<>();
-            paramMap.put("out_trade_no",out_trade_no);
+            paramMap.put("out_trade_no",outTradeNo);
             //成功
             //查询该笔订单状态
-            String jsonString =  HttpClientUtils.doPost("http://localhost:9090/pay/api/alipayQuery",paramMap);
+//            String jsonString =  HttpClientUtils.doPost("http://localhost:9090/pay/api/alipayQuery",paramMap);
+            String jsonString =  HttpClientUtils.doPost(config.getAlipayQueryURL(),paramMap);
 
             JSONObject jsonObject = JSONObject.parseObject(jsonString);
 
@@ -142,7 +168,7 @@ public class RechargeRecordController {
                     case "TRADE_CLOSED":
                     //更新充值记录状态为2，充值失败
                         RechargeRecordEntity rechargeRecordEntity = new RechargeRecordEntity();
-                        rechargeRecordEntity.setRechargeno(out_trade_no);
+                        rechargeRecordEntity.setRechargeno(outTradeNo);
                         rechargeRecordEntity.setRechargestatus("2");
                         int updateStatus = rechargeRecordService.modifyRechargeRecordByRecordNo(rechargeRecordEntity);
                         if (updateStatus < 0){
@@ -158,7 +184,7 @@ public class RechargeRecordController {
                         Map<String,Object> paramMapForRecharge = new HashMap<>();
                         paramMapForRecharge.put("uid",userEntity.getId());
                         paramMapForRecharge.put("rechargeAmount",total_amount);
-                        paramMapForRecharge.put("rechargeNo",out_trade_no);
+                        paramMapForRecharge.put("rechargeNo",outTradeNo);
                         int rechargeStatus = rechargeRecordService.recharge(paramMapForRecharge);
                         if (rechargeStatus < 0){
                             //失败
@@ -189,7 +215,7 @@ public class RechargeRecordController {
      * @version v1.0
      *
      */
-    @RequestMapping(value = "loan/myRecharge")
+    @RequestMapping(value = "/loan/myRecharge")
     public String myRecharge(HttpServletRequest request, Model model,
                            @RequestParam(value = "currentPage",required = false) Integer currentPage
     ){

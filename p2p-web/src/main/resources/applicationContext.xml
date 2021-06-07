@@ -12,6 +12,8 @@
 	<bean class="com.bob.p2p.config.Config">
 		<property name="realNameAppKey" value="${realNameAppKey}"/>
 		<property name="realNameUrl" value="${realNameUrl}"/>
+		<property name="alipayURL" value="${alipay_pay_url}"/>
+		<property name="alipayQueryURL" value="${alipay_query_url}"/>
 	</bean>
 
 	<!-- 导入spring mvc配置文件 -->

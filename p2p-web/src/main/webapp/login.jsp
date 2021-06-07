@@ -36,9 +36,9 @@
 		     <label>密码</label>
 		     	<input id="loginPassword" name="loginPassword" type="password" placeholder="请输入登录密码" class="input_text" maxlength="16"/> 
 		     </div>
-		     
+
 		     <div class="login-yzm">
-		     <div id="showCaptcha" class="yzm-box" style="display:none;">
+		     <div id="showCaptcha" class="yzm-box" >
 			 	<input id="captcha" type="text" class="yzm" placeholder="点击右侧图片可刷新" maxlength="10" placeholder="点击右侧图片可刷新" onblur="checkCaptcha()"/>
 			 	<img src="${pageContext.request.contextPath}/jcaptcha/captcha" alt="图片看不清？点击重新得到验证码" id="imgCode" onclick="this.src='${pageContext.request.contextPath}/jcaptcha/captcha?d='+new Date().getTime()" style="cursor:pointer;border:0; display:inline;vertical-align:middle;"/>   
 		     </div>

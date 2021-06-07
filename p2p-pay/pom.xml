@@ -145,5 +145,11 @@
       <scope>system</scope>
       <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/alipay-sdk-java20170324180803.jar</systemPath>
     </dependency>
+    <!-- 微信支付的sdk   -->
+    <dependency>
+      <groupId>com.github.wxpay</groupId>
+      <artifactId>wxpay-sdk</artifactId>
+      <version>0.0.3</version>
+    </dependency>
   </dependencies>
 </project>

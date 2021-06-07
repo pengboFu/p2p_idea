@@ -72,7 +72,7 @@ public class UserController {
       *
       */
 
-    @PostMapping("loan/checkPhone")
+    @PostMapping("/loan/checkPhone")
     public @ResponseBody Object checkPhone(HttpServletRequest request,
                                            @RequestParam(value = "phone",required = true) String phone){
         Map<String,Object> map = new HashMap<>();
@@ -96,7 +96,7 @@ public class UserController {
       * @version v1.0
       *
       */
-    @PostMapping("loan/verifyCaptcha")
+    @PostMapping("/loan/verifyCaptcha")
     public @ResponseBody Object verifyCaptcha(
             HttpServletRequest request,
             @RequestParam(value = "captcha",required = true) final String captcha
@@ -125,7 +125,7 @@ public class UserController {
       * @version v1.0
       *
       */
-    @PostMapping("loan/register")
+    @PostMapping("/loan/register")
     public @ResponseBody Object register(
             HttpServletRequest request,
             @RequestParam(value ="phone",required = true) final String phone,
@@ -165,7 +165,7 @@ public class UserController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/checkRealName")
+    @RequestMapping(value = "/loan/checkRealName")
     public @ResponseBody Object checkRealName(
             HttpServletRequest request,
             @RequestParam(value = "realName",required = true) final String realName,
@@ -242,7 +242,7 @@ public class UserController {
       *
       */
 
-    @RequestMapping(value = "loan/financeAccount")
+    @RequestMapping(value = "/loan/financeAccount")
     public @ResponseBody FinanceAccountExEntity financeAccount(
             HttpServletRequest request
     ){
@@ -259,7 +259,7 @@ public class UserController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/login")
+    @RequestMapping(value = "/loan/login")
     public @ResponseBody Object login(HttpServletRequest request,
                                       @RequestParam(value = "phone",required = true) String phone,
                                       @RequestParam(value = "loginPassword",required = true) String loginPassword,
@@ -292,7 +292,7 @@ public class UserController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/logout")
+    @RequestMapping(value = "/loan/logout")
     public String logout(
         HttpServletRequest request
     ){
@@ -310,7 +310,7 @@ public class UserController {
       * @version v1.0
       *
       */
-    @RequestMapping(value = "loan/myCenter")
+    @RequestMapping(value = "/loan/myCenter")
     public String myCenter(
             HttpServletRequest request,
             Model model
@@ -347,7 +347,7 @@ public class UserController {
      * @version v1.0
      *
      */
-    @RequestMapping(value = "loan/myIncome")
+    @RequestMapping(value = "/loan/myIncome")
     public String myIncome(HttpServletRequest request, Model model,
                            @RequestParam(value = "currentPage",required = false) Integer currentPage
     ){

@@ -46,14 +46,14 @@ $(function(){
             <c:choose>
                 <c:when test="${empty userSession}">
                     <!-- 未登录start -->
-                    <div class="no-login"><a href="register.jsp" class="btn-reg">注册</a><a href="${pageContext.request.contextPath}/login.jsp" class="btn-login">登录</a></div>
+                    <div class="no-login"><a href="${pageContext.request.contextPath}/register.jsp" class="btn-reg">注册</a><a href="${pageContext.request.contextPath}/login.jsp" class="btn-login">登录</a></div>
                     <!-- 未登录end -->
                 </c:when>
                 <c:otherwise>
                     <!--登录后begin-->
                     <div class="logged">
                         <div class="userinfo-up">
-                            <a href="loan/myCenter" class="user-phone">${userSession.phone}</a><a href="/webPage/account/member_systems.html" class="user-vip" id="member">VIP1</a><i></i>
+                            <a href="${pageContext.request.contextPath}/loan/myCenter" class="user-phone">${userSession.phone}</a><a href="/webPage/account/member_systems.html" class="user-vip" id="member">VIP1</a><i></i>
                         </div>
                         <div class="userinfo-drop-down" style="height: 0px;">
                             <div class="down-bk">

@@ -20,6 +20,40 @@ public class Config {
       */
     private String realNameUrl;
 
+    /**
+      * 支付宝支付地址
+      * @Author: bob
+      * @Date: 2021/6/6 20:10
+      * @version v1.0
+      *
+      */
+    private String alipayURL;
+
+    /**
+      * 支付宝订单查询地址
+      * @Author: bob
+      * @Date: 2021/6/6 20:14
+      * @version v1.0
+      *
+      */
+    private String alipayQueryURL;
+
+    public String getAlipayQueryURL() {
+        return alipayQueryURL;
+    }
+
+    public void setAlipayQueryURL(String alipayQueryURL) {
+        this.alipayQueryURL = alipayQueryURL;
+    }
+
+    public String getAlipayURL() {
+        return alipayURL;
+    }
+
+    public void setAlipayURL(String alipayURL) {
+        this.alipayURL = alipayURL;
+    }
+
     public String getRealNameAppKey() {
         return realNameAppKey;
     }
