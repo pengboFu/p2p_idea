@@ -56,5 +56,76 @@ public class Constants  {
      *
      */
     public static final Integer PRODUCET_TYPE_S = 2;
-
+    /**
+      *
+      * @Description: 图片验证码
+      * @Author: bob
+      * @Date: 2021/5/27 19:51
+      * @version v1.0
+      *
+      */
+    public static final String CAPTCHA = "captcha";
+    /**
+      *
+      * @Description: 页面返回信息
+      * @Author: bob
+      * @Date: 2021/5/27 21:43
+      * @version v1.0
+      *
+      */
+    public static final String ERROR_MASSAGE = "errorMessage";
+    /**
+      *
+      * @Description: 返回成功信息
+      * @Author: bob
+      * @Date: 2021/5/27 21:44
+      * @version v1.0
+      *
+      */
+    public static final String OK = "ok";
+    /**
+      *
+      * @Description: 注册返回信息
+      * @Author: bob
+      * @Date: 2021/5/28 9:43
+      * @version v1.0
+      *
+      */
+    public static final String SUCCESS = "success";
+    /**
+      *
+      * @Description: 注册返回信息
+      * @Author: bob
+      * @Date: 2021/5/28 9:43
+      * @version v1.0
+      *
+      */
+    public static final String FALL = "fail";
+    /**
+      *
+      * @Description: 用户信息
+      * @Author: bob
+      * @Date: 2021/5/28 9:56
+      * @version v1.0
+      *
+      */
+    public static final String USER_SESSION = "userSession";
+    /**
+      * 投资排行榜
+      * @Description:
+      * @Author: bob
+      * @Date: 2021/6/4 13:30
+      * @version v1.0
+      *
+      */
+    public static final String INVEST_TOP = "investTop";
+    /**
+      * 唯一數字
+      * @Description:
+      * @Author: bob
+      * @Date: 2021/6/4 21:03
+      * @version v1.0
+      *
+      */
+    public static final Object ONLY_NUMBER = "onlyNumber";
 }

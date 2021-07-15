@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/share.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
     <style type="text/css">body{background:#f2f2f2;}</style>
-    <title>散标,互联网金融产品列表-动力金融网,专业的互联网金融信息服务平台</title>
+    <title>散标,互联网金融产品列表-球球金融网,专业的互联网金融信息服务平台</title>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
 		<div class="pro-box <c:if test="${loanInfo.leftProductMoney eq 0}">pro-full</c:if>">
 		    <div class="pro-top">
 		      <h3>${loanInfo.productName}</h3>
-		      <p>动力金融网特选小额信贷消费产品</p>
+		      <p>球球金融网特选小额信贷消费产品</p>
 		    </div>
 		    <div class="pro-main" style="height:260px;">
 		      <div class="pro-rate">
@@ -99,7 +100,7 @@
 	            <div class="system-tit"><h3>投资排行榜</h3></div>
 	            <ul>
 	            <c:forEach items="${topUserList}" var="topUser" varStatus="index">
-	            	<li><span>${index.count}.&nbsp;${topUser.phone}&nbsp;&nbsp;${topUser.score}</span></li>
+	            	<li><span>${index.count}.&nbsp;${fn:substring(topUser.phone,0, 3)}******${fn:substring(topUser.phone, 9, 11)}&nbsp;${topUser.score}</span></li>
 	            </c:forEach>
 	            </ul>
 	        </div>

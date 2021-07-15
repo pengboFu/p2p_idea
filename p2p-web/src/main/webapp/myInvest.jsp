@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>动力金融网 - 专业的互联网金融信息服务平台</title>
+<title>球球金融网 - 专业的互联网金融信息服务平台</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/fund-guanli.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cashbox-share.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base.css"/>
@@ -72,11 +72,11 @@ $(document).ready(function(){
        </dt>
        <c:forEach items="${bidInfoList}" var="bidInfo">
        	<dd>
-	       <div class="deal-time"><fmt:formatDate value="${bidInfo.bidTime}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
-	       <div class="deal-name">${bidInfo.loanInfo.productName}</div>
+	       <div class="deal-time"><fmt:formatDate value="${bidInfo.bidtime}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+	       <div class="deal-name">${bidInfo.loanInfoEntity.productName}</div>
 	       <div class="deal-type" style="width:120px">
-	       <c:if test="${bidInfo.bidStatus eq 1}">投资成功</c:if></div>
-	       <div class="deal-money">${bidInfo.bidMoney}</div>
+	       <c:if test="${bidInfo.bidstatus eq 1}">投资成功</c:if></div>
+	       <div class="deal-money">${bidInfo.bidmoney}</div>
        	</dd>
        	</c:forEach>
       	&nbsp;&nbsp;

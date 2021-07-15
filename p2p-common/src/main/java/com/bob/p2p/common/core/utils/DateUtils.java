@@ -16,6 +16,7 @@ public class DateUtils {
     public static final String DATE_FORMAT_YYYYMMDDHHMMSSSSS = "yyyyMMddHHmmssSSS";
     public static final String DATE_FORMAT_YYYY_MM_DD = "yyyy-MM-dd";
 
+
     /**
      * 使用参数Format格式化Date成字符串
      */
@@ -74,5 +75,50 @@ public class DateUtils {
         return Utils.isEmptyString(strDate) ? null : new SimpleDateFormat(
                 pattern).parse(strDate);
     }
+    /**
+     *
+     * 当前日期增加 days 之后的日期
+     * @Author: bob
+     * @Date: 2021/5/31 13:18
+     * @version v1.0
+     *
+     */
+    public static Date getDateByAddDays(Date date,Integer days){
 
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTime(date);
+
+        calendar.add(Calendar.DATE,days);
+
+        return  calendar.getTime();
+    }
+    /**
+      * @Description: TODO(一句话描述该类的功能)
+      * @Author: bob
+      * @Date: 2021/5/31 14:02
+      * @version v1.0
+      *
+      */
+    public static Date getDateByMonthes(Date productFullTime, Integer cycle) {
+
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTime(productFullTime);
+
+        calendar.add(Calendar.MONTH,cycle);
+
+        return  calendar.getTime();
+    }
+    /**
+      *获得一个时间戳
+      * @Description:
+      * @Author: bob
+      * @Date: 2021/6/4 20:55
+      * @version v1.0
+      *
+      */
+    public static String getTimeStamp() {
+        return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    }
 }

@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>动力金融网-CFCA认证的互联网金融公司</title>
+<title>球球金融网-CFCA认证的互联网金融公司</title>
 <script language="javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/trafficStatistics.js"></script>
 <link rel="stylesheet" type="text/css" href="http://www.jinxin99.cn/static/ssl/css/share.css"/>

@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 <script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/js/realName.js"></script>
-<title>实名认证动力金融网-动力金融网,专业的互联网金融信息服务平台</title>
+<title>实名认证球球金融网-球球金融网,专业的互联网金融信息服务平台</title>
 </head>
 
 <body>
@@ -61,7 +61,7 @@
               </div>
               <div class="remember" style="z-index:60;">
                 <span class="on">
-                <input id="agree" name="agree" type="checkbox"/>我已阅读并同意<a href="javascript:alertBox('mask','agreement');"><font style="color: red;">《动力金融网&trade;实名认证服务协议》</font></a>
+                <input id="agree" name="agree" type="checkbox"/>我已阅读并同意<a href="javascript:alertBox('mask','agreement');"><font style="color: red;">《球球金融网&trade;实名认证服务协议》</font></a>
                 </span>
               </div>
               <div class="bn-login">

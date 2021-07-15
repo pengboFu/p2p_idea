@@ -10,31 +10,38 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
 
+	<!--截获注解所有URL请求-->
 	<mvc:default-servlet-handler/>
 	
 	<mvc:annotation-driven/>
 	
 	<!-- spring mvc 扫描包下的controller -->
 	<context:component-scan base-package="com.bob.p2p.web" />
+
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
 	
 	<!-- 拦截器拦截未登录请求 -->
-<!--	<mvc:interceptors>-->
-<!--		<mvc:interceptor>-->
-<!--			<mvc:mapping path="/loan/**" />-->
-<!--			<mvc:exclude-mapping path="/loan/login"/>-->
-<!--			<mvc:exclude-mapping path="/loan/register"/>-->
-<!--			<mvc:exclude-mapping path="/loan/phoneCheck"/>-->
-<!--			<mvc:exclude-mapping path="/loan/verifyCaptcha"/>-->
-<!--			<mvc:exclude-mapping path="/jcaptcha/captcha"/>-->
-<!--			<mvc:exclude-mapping path="/loan/loan"/>-->
-<!--			<mvc:exclude-mapping path="/loan/loanInfo"/>-->
-<!--			<mvc:exclude-mapping path="/loan/borrower"/>-->
-<!--			<mvc:exclude-mapping path="/loan/alipayBack"/>-->
-<!--			<mvc:exclude-mapping path="/loan/alipayNotify"/>-->
-<!--			<mvc:exclude-mapping path="/loan/stat"/>-->
-<!--			<bean class="com.bob.p2p.interceptor.LoginInterceptor" />-->
-<!--		</mvc:interceptor>-->
-<!--	</mvc:interceptors>-->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/loan/**" />
+			<mvc:exclude-mapping path="/loan/login"/>
+			<mvc:exclude-mapping path="/loan/register"/>
+			<mvc:exclude-mapping path="/loan/phoneCheck"/>
+			<mvc:exclude-mapping path="/loan/verifyCaptcha"/>
+			<mvc:exclude-mapping path="/jcaptcha/captcha"/>
+			<mvc:exclude-mapping path="/loan/loan"/>
+			<mvc:exclude-mapping path="/loan/loanInfo"/>
+			<mvc:exclude-mapping path="/loan/borrower"/>
+			<mvc:exclude-mapping path="/loan/alipayBack"/>
+			<mvc:exclude-mapping path="/loan/alipayNotify"/>
+			<mvc:exclude-mapping path="/loan/stat"/>
+			<bean class="com.bob.p2p.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 	    <property name="messageConverters">
@@ -61,9 +68,5 @@
 			</list>
 		</property>
 	</bean>
-	
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
+
 </beans>

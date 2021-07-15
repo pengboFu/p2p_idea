@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.p2p.dao.loan.IncomeRecordExEntityMapper">
+  <resultMap id="incomeRecordExEntityResultMap" type="com.bob.p2p.model.loan.IncomeRecordExEntity" extends="com.bob.p2p.dao.IncomeRecordEntityMapper.BaseResultMap">
+      <association property="loanInfoEntity" resultMap="com.bob.p2p.dao.LoanInfoEntityMapper.BaseResultMap"/>
+  </resultMap>
+  
+  <select id="selectIncomeRecordByCurDateAndIncomeStatus" resultMap="incomeRecordExEntityResultMap">
+    select
+      <include refid="com.bob.p2p.dao.IncomeRecordEntityMapper.Base_Column_List"></include>
+    from
+        b_income_record
+    where
+        bir_incomeStatus = #{status} and bir_incomeDate = curdate();
+  </select>
+
+    <select id="selectIncomeRecordTopByUid" resultMap="incomeRecordExEntityResultMap">
+        select
+        <include refid="com.bob.p2p.dao.IncomeRecordEntityMapper.Base_Column_List"/>,
+        <include refid="com.bob.p2p.dao.LoanInfoEntityMapper.Base_Column_List"/>
+        from
+            b_income_record
+        left join
+          b_loan_info on bli_id = bir_loanId
+        where
+        bir_uid = #{uid}
+        order by
+        bir_incomeDate desc
+        limit #{currentPage},#{pageSize}
+    </select>
+    <select id="selectIncomeRecordByUidTotal" resultType="java.lang.Long">
+        select
+            count(*)
+        from
+             b_income_record
+        where
+            bir_uid = #{uid}
+    </select>
+</mapper>

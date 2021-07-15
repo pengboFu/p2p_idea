@@ -69,76 +69,31 @@
     </dependency>
     <!-- servlet及jstl标签库依赖的JAR配置end -->
 
-    <!-- Log4j2依赖的JAR配置start -->
+    <!-- Log4j的配置start -->
     <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+    <!-- Log4j 的配置 end -->
+    <!-- servlet及jstl标签库依赖的JAR配置start -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>jstl-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-jcl</artifactId>
+      <groupId>org.apache.taglibs</groupId>
+      <artifactId>taglibs-standard-spec</artifactId>
     </dependency>
-    <!-- Log4j2依赖的JAR配置end -->
-
-    <!-- MySQL数据库连接驱动start -->
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
+      <groupId>org.apache.taglibs</groupId>
+      <artifactId>taglibs-standard-impl</artifactId>
     </dependency>
-    <!-- MySQL数据库连接驱动end -->
-
-    <!-- JDBC连接池start -->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid</artifactId>
-    </dependency>
-    <!-- JDBC连接池end -->
-
-    <!-- MyBatis框架start -->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-    </dependency>
-    <!-- MyBatis框架end -->
-
-    <!-- MyBatis与Spring整合start -->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-spring</artifactId>
-    </dependency>
-    <!-- MyBatis与Spring整合end -->
-
-    <!-- Spring AOP支持start -->
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-    </dependency>
-    <!-- Spring AOP支持end -->
-
-    <!-- Dubbo框架依赖的JAR配置start  2.6.0-->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo</artifactId>
-    </dependency>
-    <!-- Dubbo框架依赖的JAR配置end -->
-
-    <!-- zookeeper客户端依赖start -->
-    <dependency>
-      <groupId>com.101tec</groupId>
-      <artifactId>zkclient</artifactId>
-    </dependency>
-    <!-- zookeeper客户端依赖end -->
-
-    <!-- httpclient操作包start -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-    </dependency>
-    <!-- httpclient操作包end -->
+    <!-- servlet及jstl标签库依赖的JAR配置end -->
 
     <!-- 阿里巴巴json解析包start -->
     <dependency>
@@ -146,18 +101,7 @@
       <artifactId>fastjson</artifactId>
     </dependency>
     <!-- 阿里巴巴json解析包end -->
-    <!--        spring-data-redis依赖配置    -->
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-redis</artifactId>
-    </dependency>
-    <!--        spring-data-redis依赖配置    -->
 
-    <!--     jedis 配置JAR插件      -->
-    <dependency>
-      <groupId>redis.clients</groupId>
-      <artifactId>jedis</artifactId>
-    </dependency>
 
     <!--       common-lang3    -->
     <dependency>
@@ -180,19 +124,32 @@
     </dependency>
     <!-- 加载jackson包end -->
 
-    <!--   p2p接口工程     -->
+    <!-- Spring AOP支持start -->
     <dependency>
-      <groupId>com.bob.p2p</groupId>
-      <artifactId>p2p-exterface</artifactId>
-      <version>1.0.0</version>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
     </dependency>
+    <!-- Spring AOP支持end -->
 
-    <!--   conmmon接口工程     -->
+    <!--       common-lang3    -->
     <dependency>
-      <groupId>com.bob.p2p</groupId>
-      <artifactId>p2p-common</artifactId>
-      <version>1.0.0</version>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
     </dependency>
-
+    <!-- 加载jackson包start -->
+      <!-- 引入非本地仓库jar包 支付宝支付依赖 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>alipay-sdk-java-3.3.0</artifactId>
+      <version>20170324180803</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/alipay-sdk-java20170324180803.jar</systemPath>
+    </dependency>
+    <!-- 微信支付的sdk   -->
+    <dependency>
+      <groupId>com.github.wxpay</groupId>
+      <artifactId>wxpay-sdk</artifactId>
+      <version>0.0.3</version>
+    </dependency>
   </dependencies>
 </project>

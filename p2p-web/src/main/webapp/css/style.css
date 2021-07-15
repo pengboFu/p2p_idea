@@ -110,13 +110,13 @@ body {background:#F8F8F8;}
 .min_nav .on .nav_3,.min_nav a:hover .nav_3{ background-position:-390px 0px;}
 .min_nav a .nav_4{ background-position:-440px 0px;}
 .min_nav .on .nav_4,.min_nav a:hover .nav_4{ background-position:-140px -50px;}
-.min_nav a .nav_5{ background-position:-190px -50px;}/*动力金融风采*/
-.min_nav .on .nav_5,.min_nav a:hover .nav_5{ background-position:-240px -50px;}/*动力金融风采*/
+.min_nav a .nav_5{ background-position:-190px -50px;}/*球球金融风采*/
+.min_nav .on .nav_5,.min_nav a:hover .nav_5{ background-position:-240px -50px;}/*球球金融风采*/
 .min_nav a .nav_6{ background-position:-290px -50px;}
 .min_nav .on .nav_6,.min_nav a:hover .nav_6{ background-position:-340px -50px;}
 .min_nav a .nav_7{ background-position:-390px -50px;}
 .min_nav .on .nav_7,.min_nav a:hover .nav_7{ background-position:-440px -50px;}
-/*动力金融介绍*/
+/*球球金融介绍*/
 .jinxin_introduce{ background:#fff; padding:55px 0px;}
 .jinxin_introduce h2{ width:450px; height:87px; overflow:hidden; text-indent:-99px; margin:0 auto; background:url(images/aboutus.png) no-repeat 0px -225px;}
 .jinxin_introduce p{ text-align:center; font-size:18px; line-height:34px; color:#666; margin-top:40px;}
@@ -234,7 +234,7 @@ body {background:#F8F8F8;}
 .events_body .more_events a{ display:block; width:108px; height:36px; text-align:center; line-height:36px; background:#f6f6f6; color:#444; border:solid 1px #e3e5e8; font-size:18px;-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius:4px;}
 .events_body .memorabilia_box:hover h3 a{ color:#17a2d5;}
 /*================媒体报道=================*/
-/*动力金融的声音*/ 
+/*球球金融的声音*/
 .jinxin_voice{ background:#fff; padding:55px 0px 50px;}
 .jinxin_voice h2{ width:201px; height:72px; overflow:hidden; text-indent:-99px; background:url(images/aboutus.png) no-repeat 0px -140px; margin:0 auto;}
 .jinxin_voice p{ text-align:center; width:620px; font-size:18px; line-height:34px; color:#444; margin:20px auto 0px; position:relative;}
@@ -1316,7 +1316,7 @@ background: #17A2D5;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-ra
 .how-many .num{ display:inline-block; width:64px; height:64px; line-height:64px; color:#fff; font-size:40px; text-align:center; margin:0px 3px 0px 0px;background:url(images/bg-zhuolu.png) no-repeat -330px -470px; vertical-align:top; }
 .how-many .text-many{  width:185px; height:37px; background:url(images/bg-zhuolu.png) no-repeat 0px -650px; margin-top:40px;}
 .how-many .go-money{ margin-top:40px;}
-/*关注动力金融*/
+/*关注球球金融*/
 .guanzhu-jinxin{ background:#f8f8f8; padding:50px 0px;}
 .guanzhu-jinxin .sao_box{ float: left; width: 350px;}
 .guanzhu-jinxin .sao_left{margin:0px 64px 0px 205px;}
@@ -1471,7 +1471,7 @@ background: #17A2D5;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-ra
 .experience_body .shuangdan_btn a{ background-position:-180px -180px;} 
 .experience_body .shuangdan_btn a:hover{ background-position:-180px -240px;} 
 .experience_body .icon_miaosha{ background-position:-400px -180px;}
-/*=============手机动力金融页2015-3-24================= */
+/*=============手机球球金融页2015-3-24================= */
 .phone_jinxin_banner{ height:580px; background:url(images/phone_jinxin_banner.jpg) no-repeat center 0;}
 .phone_jinxin_banner .mainBox{ position:relative;}
 .phone_jinxin_banner .btn_iphone{ display:block; width:234px; height:61px; overflow:hidden; text-indent:-99px; background:url(images/btn_phone.png) no-repeat; position:absolute; left:605px; top:318px;}

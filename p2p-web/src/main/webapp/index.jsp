@@ -6,8 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    	<meta name="keywords" content="互联网金融平台，互联网金融产品，互联网金融公司"/>
-   	<meta name="description" content="动力金融网是动力教育集团旗下一站式互联网金融平台.接入支付清算协会风险系统，用互联网技术和金融创新使投资与借贷更透明、更高效.优选互联网金融产品随心选。"/>
-    <title>动力金融网官网-专业的互联网金融信息服务平台</title>
+   	<meta name="description" content="球球金融网是球球教育集团旗下一站式互联网金融平台.接入支付清算协会风险系统，用互联网技术和金融创新使投资与借贷更透明、更高效.优选互联网金融产品随心选。"/>
+    <title>球球金融网官网-专业的互联网金融信息服务平台</title>
     <link rel="stylesheet" type="text/css" href="css/share.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/ingot.css"/>
@@ -34,19 +34,23 @@
 		
     <div class="registerBody">
         <div class="register-bg"></div>
-        <!-- 未登录状态 -->
-        <div class="register">
-            <h3>动力金融网历史年化收益率</h3>
-            <h4><span id="avg">${historyAverageRete}</span>%</h4>
-            <div class="bn_register"><a href="register.jsp" class="btn-1">免费注册</a></div>
-            <div class="login">有账号? <a href="login.jsp">立即登录</a></div>
-        </div>
-        <!-- 登录状态  
-        <div class="register welcome">
-            <div class="welcome-txt">欢迎 <span>“<b>张三</b>”</span><br/>来动力金融网投资！</div>
-            <div class="bn_register"><a href="loan/myCenter" class="btn-1">进入我的小金库</a></div>
-        </div>
-        -->
+		<c:choose>
+			<c:when test="${empty userSession}">
+				<!-- 未登录状态 -->
+				<div class="register">
+					<h3>球球金融网历史年化收益率</h3>
+					<h4><span id="avg">${historyAverageRete}</span>%</h4>
+					<div class="bn_register"><a href="register.jsp" class="btn-1">免费注册</a></div>
+					<div class="login">有账号? <a href="login.jsp">立即登录</a></div>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div class="register welcome">
+					<div class="welcome-txt">欢迎 <span>“<b>${userSession.phone}</b>”</span><br/>来球球金融网投资！</div>
+					<div class="bn_register"><a href="loan/myCenter" class="btn-1">进入我的小金库</a></div>
+				</div>
+			</c:otherwise>
+		</c:choose>
     </div>
 </div>
 <!--轮播图end-->
@@ -99,7 +103,7 @@
 							<p class="text2">剩余可投金额</p>
 						</li>
 						<li class="box4">
-							<a href="loanInfo.jsp" class="go-invest">立即投资</a>
+							<a href="loan/loanInfo?id=${xloanInfo.id}" class="go-invest">立即投资</a>
 						</li>
 					</ul>
 				</div>
@@ -138,7 +142,7 @@
 					</div>
 					<div class="pro-intr"><p>优选计划项目，投资回报周期1个月，起点低，适合短期资金周转、对流动性要求高的投资人。</p></div>
 					<div class="pro-btn">
-						<a href="loanInfo.jsp" class="btn-1">立即投资</a>
+						<a href="loan/loanInfo?id=${uLoanInfo.id}" class="btn-1">立即投资</a>
 					</div>
 				</div>
 			</div>
@@ -156,7 +160,7 @@
 			<div class="pro-box <c:if test='${sLoanInfo.leftProductMoney == 0}'>pro-full</c:if>">
 				<div class="pro-top">
 					<h3>${sLoanInfo.productName}</h3>
-					<p>动力金融网特选小额理财产品</p>
+					<p>球球金融网特选小额理财产品</p>
 				</div>
 				<div class="pro-main">
 					<div class="pro-rate">

@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bob.p2p.dao.loan.BidInfoExEntityMapper" >
-  <resultMap id="bidInfoExEntity" type="com.bob.p2p.model.loan.BidInfoEntity" extends="com.bob.p2p.dao.BidInfoEntityMapper.BaseResultMap">
-
+  <resultMap id="bidInfoExEntity" type="com.bob.p2p.model.loan.BidInfoExEntity" extends="com.bob.p2p.dao.BidInfoEntityMapper.BaseResultMap">
+    <association property="userEntity" resultMap="com.bob.p2p.dao.UserEntityMapper.BaseResultMap" />
+    <association property="loanInfoEntity" resultMap="com.bob.p2p.dao.LoanInfoEntityMapper.BaseResultMap"/>
   </resultMap>
   <!-- 查询平台总投资额 -->
   <select id="selectALlBidMoney" resultType="java.lang.Double">
-    select sum(bidMoney) from b_bid_info
+    select sum(bbi_bidMoney) from b_bid_info
+  </select>
+
+  <select id="selectBidInfoListByLoanId" resultMap="bidInfoExEntity">
+    select
+      <include refid="com.bob.p2p.dao.BidInfoEntityMapper.Base_Column_List"/>,
+      <include refid="com.bob.p2p.dao.UserEntityMapper.Base_Column_List"/>
+    from
+      b_bid_info
+    left join
+      u_user on uu_id = bbi_uid
+    where
+    bbi_loanId = #{loanId}
+    order by
+    bbi_bidTime desc
+  </select>
+
+  <select id="selectBidInfoByLoanId" resultMap="bidInfoExEntity">
+    select
+        <include refid="com.bob.p2p.dao.BidInfoEntityMapper.Base_Column_List"/>
+    from
+        b_bid_info
+    where
+        bbi_loanId = #{loanId}
+  </select>
+
+  <!-- 查询用户投资记录top -->
+  <select id="selectBidInfoListTop" resultMap="bidInfoExEntity">
+    select
+        <include refid="com.bob.p2p.dao.BidInfoEntityMapper.Base_Column_List"/>,
+    <include refid="com.bob.p2p.dao.LoanInfoEntityMapper.Base_Column_List"/>
+    from
+        b_bid_info
+    left join b_loan_info
+        on  bbi_loanId = bli_id
+    where
+        bbi_uid = #{uid}
+    order by
+        bbi_bidTime desc
+    limit #{currentPage},#{pageSize}
+  </select>
+  <select id="selectBidInfoByUidTotal" resultType="java.lang.Long">
+    select
+        count(*)
+    from
+      b_bid_info
+    where
+      bbi_uid = #{uid}
   </select>
 </mapper>

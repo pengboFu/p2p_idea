@@ -86,6 +86,16 @@ $(function(){
 	});
 	//个人信息下拉
 	$(".logged").hover(function(){
+		$.ajax({
+			url:"/p2p/loan/financeAccount",
+			type:"get",
+			success: function(msg){
+				$("#frame_top").html(msg.availableMoney);
+			},
+			error: function (){
+				alert("烦死了");
+			}
+		})
 		$(this).addClass("logged-hover");
 		$(".userinfo-drop-down",this).stop().animate({ height: '205px'},300);
 	},function(){

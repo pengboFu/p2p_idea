@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>动力金融网-CFCA认证的互联网金融公司</title>
+<title>球球金融网-CFCA认证的互联网金融公司</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/trafficStatistics.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
@@ -84,19 +84,23 @@
 		<dt>
 			<span class="record-num">序号</span><span class="invest-user">投资人</span><span class="invest-money">投资金额(元)</span><span class="invest-time">投资时间</span>
 		</dt>
-		<c:if test="${empty bidInfoList}">
-			<dd style="text-align:center;">
-			该产品暂时还没有人投资，赶快去投资吧~
-			</dd>
-		</c:if>
-		<c:forEach items="${bidInfoList}" var="bidInfo" varStatus="index">
-		<dd>
-			<span class="record-num">${index.count}</span>
-			<span class="invest-user">${fn:substring(bidInfo.user.phone, 0, 3)}******${fn:substring(bidInfo.user.phone, 9, 11)}</span> 
-			<span class="invest-money">${bidInfo.bidMoney}</span>
-			<span class="invest-time"><fmt:formatDate value="${bidInfo.bidTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-		</dd>
-		</c:forEach>
+            <c:choose>
+                <c:when test="${empty bidInfoList}">
+                    <dd style="text-align:center;">
+                        该产品暂时还没有人投资，赶快去投资吧~
+                    </dd>
+                </c:when>
+                <c:otherwise>
+                    <c:forEach items="${bidInfoList}" var="bidInfo" varStatus="index">
+                        <dd>
+                            <span class="record-num">${index.count}</span>
+                            <span class="invest-user">${fn:substring(bidInfo.userEntity.phone, 0, 3)}******${fn:substring(bidInfo.userEntity.phone, 9, 11)}</span>
+                            <span class="invest-money">${bidInfo.bidmoney}</span>
+                            <span class="invest-time"><fmt:formatDate value="${bidInfo.bidtime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
+                        </dd>
+                    </c:forEach>
+                </c:otherwise>
+            </c:choose>
 		</dl>
 		</div>
       </div>
@@ -116,7 +120,7 @@
             <dt>我的账户可用</dt>
             <dd>资金(元)：
             <c:choose>
-	            <c:when test="${empty user}">
+	            <c:when test="${empty userSession}">
 	            <span style="font-size:18px;color:#ff6161;vertical-align:bottom;"><a href="${pageContext.request.contextPath}/login.jsp">请登录</a></span>
 	            </c:when>
 	            <c:otherwise>
@@ -167,19 +171,25 @@ function checkMoney () {
 	if (""==bidMoney) {
 		$(".max-invest-money").html("请输入投资金额");
 		return false;
-	} else if (bidMoney < bidMinLimit) {
+	}else if(isNaN(bidMoney)){
+        $(".max-invest-money").html("请输入数字");
+        return false;
+    } else if (bidMoney < bidMinLimit) {
 		$(".max-invest-money").html("");
 		$(".max-invest-money").html("起投投资金额不能低于"+bidMinLimit+"元");
 		return false;
-	} else if (bidMoney%100 != 0) {
+	}
+	else if (bidMoney%100 != 0) {
 		$(".max-invest-money").html("");
 		$(".max-invest-money").html("投资金额应为100的整数倍");
 		return false;
-	} else if (bidMoney > bidMaxLimit) {
-		$(".max-invest-money").html("");
-		$(".max-invest-money").html("单笔投资金额不能超过"+bidMaxLimit+"元");
-		return false;
-	} else {
+	}
+	// else if (bidMoney > bidMaxLimit) {
+	// 	$(".max-invest-money").html("");
+	// 	$(".max-invest-money").html("单笔投资金额不能超过"+bidMaxLimit+"元");
+	// 	return false;
+	// }
+	else {
 		//计算预计本息收益
 		var income = bidMoney * ${loanInfo.rate} / 100 / 365 * ${loanInfo.cycle} * 30;
 		var shouyi = Math.round(income * Math.pow(10, 2)) / Math.pow(10, 2);  
@@ -191,13 +201,14 @@ function closeit() {
 	$("#failurePayment").hide();
 	$("#dialog-overlay1").hide();
 	window.location.href="${pageContext.request.contextPath}/loan/myCenter";
+    <%--window.location.href="${pageContext.request.contextPath}/index";--%>
 }
 //立即投资
 function invest() {
 	var flag = checkMoney();
 	if (flag == true) {
 		//判断登录
-		var user = "${user}";
+		var user = "${userSession}";
 		if (user==""||user==null) {
 			window.location.href = "../login.jsp";
 			return false;

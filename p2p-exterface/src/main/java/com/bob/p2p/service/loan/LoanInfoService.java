@@ -2,7 +2,8 @@ package com.bob.p2p.service.loan;
 
 
 import com.bob.p2p.model.VO.PagenationVO;
-import com.bob.p2p.model.loan.LoanInfoEntity;
+import com.bob.p2p.model.LoanInfoEntity;
+import com.bob.p2p.model.loan.LoanInfoExEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +12,6 @@ import java.util.Map;
 /**
  * 产品信息服务
  */
-
-@Service
 public interface LoanInfoService {
 
     /**
@@ -39,4 +38,15 @@ public interface LoanInfoService {
       *
       */
     PagenationVO<LoanInfoEntity> queryLoanInfoVoList(Map<String, Object> paramMap);
+    /**
+      *
+      * @Description:根据产品id查询产品详情
+      * @Author: bob
+      * @Date: 2021/5/27 17:27
+      * @version v1.0
+      *
+      */
+
+    LoanInfoEntity queryLoanInfoById(Integer id);
+
 }

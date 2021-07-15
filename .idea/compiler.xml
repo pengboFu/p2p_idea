@@ -13,12 +13,14 @@
         <module name="p2p-exterface" />
         <module name="p2p-mybatisGenerator" />
         <module name="p2p-web" />
+        <module name="p2p-httpClient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="p2p-common" target="1.8" />
       <module name="p2p-dataservice" target="1.8" />
       <module name="p2p-exterface" target="1.8" />
+      <module name="p2p-httpClient" target="1.8" />
       <module name="p2p-mybatisGenerator" target="1.8" />
       <module name="p2p-parent" target="1.8" />
       <module name="p2p-pay" target="1.8" />

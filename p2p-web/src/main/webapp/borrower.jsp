@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../common/css20140521/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/borrowers.css"/>
-<title>借款人信息-动力金融网,专业的互联网金融信息服务平台</title>
+<title>借款人信息-球球金融网,专业的互联网金融信息服务平台</title>
 <script language="javascript" src="../common/js/jquery-1.7.2.min.js"></script>
 <script language="javascript" src="../common/js/jquery/jquery.form.js"></script>
 <script type="text/javascript" src="../common/js/includeNewSEO.js"></script>
